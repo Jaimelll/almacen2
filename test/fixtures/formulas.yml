@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: one
+  material: 1
+  cantidad: 1.5
+  user: one
+
+two:
+  product: two
+  material: 1
+  cantidad: 1.5
+  user: two

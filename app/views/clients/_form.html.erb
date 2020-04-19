@@ -1,0 +1,49 @@
+<%= form_for(client) do |f| %>
+  <% if client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client.errors.count, "error") %> este cambio no se puede grabar:</h2>
+
+      <ul>
+      <% client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ruc %>
+    <%= f.text_field :ruc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :razon %>
+    <%= f.text_area :razon, cols: "80", rows: "1" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :direccion %>
+    <%= f.text_area :direccion , cols: "80", rows: "1" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :origen %>
+
+  <%= f.collection_select :origen, Formula.where(product_id:12).order(:orden), :orden, :descripcion  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo %>
+  
+  <%= f.collection_select :tipo, Formula.where(product_id:13).order(:orden), :orden, :descripcion  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :obs %>
+    <%= f.text_area :obs , cols: "80", rows: "1" %>
+  </div>
+<br/>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

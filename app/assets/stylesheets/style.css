@@ -1,0 +1,50 @@
+html.body{
+margin: 0px;
+   font_family: "Open Sans", sans-serif;
+}
+#logo{
+   font-size: 1.0em;
+}
+.no-margin{
+  margin: 0px;
+}
+.be-red{
+    background-color: rgb(350,50,50);
+}
+.white{
+    color: white;
+}
+.large-padding{
+    padding: 20px 14px;
+}
+.field{
+   margin-top:0.3em;
+   margin-left: 1em;
+}
+
+.form-control{
+    padding: 8px 5px;
+}
+h1 {
+  font-size: 30px;
+  }
+h2 {
+  font-size: 20px;
+
+  }
+h3 {
+  font-size: 15px
+}
+
+td,th{
+  text-align:left;
+  font-size: 13px;
+  left: 30px
+}
+.para{
+ margin-left: 20px;
+}
+.rep {
+  font: 40% sans-serif;
+  line-height: 100%;
+}

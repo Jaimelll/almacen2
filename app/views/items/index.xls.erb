@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+<meta charset="utf-8">
+</head>
+<body>
+  <h1>Partes</h1>
+
+
+  <h2 >PARAMETROS :
+
+    <%if Parameter.find_by_id(1).origen==1 %>
+      Compras
+     <%end %>
+     <%if Parameter.find_by_id(1).origen==2 %>
+       Ventas
+    <%end %>
+    <%if Parameter.find_by_id(1).origen==3 %>
+        Pedido
+    <%end %>
+    <%if Parameter.find_by_id(1).origen==4 %>
+         Orden de compra
+    <%end %>
+    <%if Parameter.find_by_id(1).origen==5 %>
+         Produccion
+     <%end %>
+     <%if Parameter.find_by_id(1).origen==6 %>
+        Inventario
+      <%end %>
+
+
+  </h2>
+       <h3>
+         <strong class="para"> EMPRESA =</strong>
+
+          <%if Parameter.find_by_id(1).empresa==1 %>
+              Mario
+          <%end %>
+          <%if Parameter.find_by_id(1).empresa==2 %>
+             Confecciones
+           <%end %>
+           <%if Parameter.find_by_id(1).empresa==3 %>
+              Industrias
+          <%end %>
+        <strong class="para"> PERIODO =</strong>
+          <%= Parameter.find_by_id(1).mes.strftime("%b")  %>-<%=Parameter.find_by_id(1).mes.strftime("%Y") %>
+        <strong class="para"> REGISTROS =</strong>
+            <%=@regis %>
+        <% if @acum>0 %>
+        <strong class="para"> SUBTOTAL =</strong>
+          <%= '%.2f' % (@acum) %>
+        <% end %>
+                    </h3>
+  <br/>
+  <table>
+    <thead>
+      <tr>
+        <th>Pfecha</th>
+      <% if Parameter.find_by_id(1).origen<5 %>
+        <th>Serie</th>
+        <th>Factura</th>
+        <th>Ruc</th>
+        <th>Razon</th>
+        <th>Subtotal</th>
+        <th>Moneda</th>
+        <th>Tc</th>
+      <% end %>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= item.pfecha.to_s+"|" %></td>
+          <% if Parameter.find_by_id(1).origen<5 %>
+          <td><%= item.serie.rjust(4,"0")+"|" %></td>
+          <td><%= item.nfactu.rjust(9,"0")+"|" %></td>
+          <td><%= item.client.ruc+"|" if item.client %></td>
+          <td><%= item.client.razon+"|" if item.client %></td>
+          <td><%= '%.2f' % (item.subtotal).to_s if item.subtotal%></td>
+          <td><%= item.moneda.to_s+"|"%></td>
+          <td><%= item.tc.to_s+"|" %></td>
+            <% end %>
+
+        </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</body>

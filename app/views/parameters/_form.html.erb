@@ -1,0 +1,36 @@
+<%= form_for(parameter) do |f| %>
+  <% if parameter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parameter.errors.count, "error") %> prohibited this parameter from being saved:</h2>
+
+      <ul>
+      <% parameter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :empresa %>
+
+   <%= f.collection_select :empresa, Formula.where(product_id:10).
+          order(:orden), :orden, :descripcion  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :origen %>
+
+    <%= f.collection_select :origen, Formula.where(product_id:11).
+           order(:orden), :orden, :descripcion  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mes %>
+    <%= f.date_select :mes, discard_day:true %>
+  </div>
+<br/>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

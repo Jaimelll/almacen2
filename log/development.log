@@ -1,0 +1,63 @@
+  [1m[36mClient Load (10.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+Started GET "/admin/dashboard" for ::1 at 2020-04-19 11:31:44 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/bundler/gems/activeadmin-01fefa139241/app/views/active_admin/page/index.html.arb
+  [1m[36mParameter Load (6.1ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (3.1ms)[0m  [1m[34mSELECT  descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (19.4ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 2], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (16.9ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/bundler/gems/activeadmin-01fefa139241/app/views/active_admin/page/index.html.arb (9596.8ms)
+Completed 200 OK in 9792ms (Views: 9551.8ms | ActiveRecord: 94.6ms)
+
+
+Started GET "/" for ::1 at 2020-04-19 11:31:57 -0700
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/bundler/gems/activeadmin-01fefa139241/app/views/active_admin/page/index.html.arb
+  [1m[36mParameter Load (1.7ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (19.8ms)[0m  [1m[34mSELECT  descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 2], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/bundler/gems/activeadmin-01fefa139241/app/views/active_admin/page/index.html.arb (435.4ms)
+Completed 200 OK in 477ms (Views: 431.5ms | ActiveRecord: 34.4ms)
+
+
+  [1m[36mClient Load (7.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+Started GET "/admin/products" for ::1 at 2020-04-19 11:49:18 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/bundler/gems/activeadmin-01fefa139241/app/views/active_admin/resource/index.html.arb
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (proceso <> 3)[0m
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (proceso = 3)[0m
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "products" WHERE (proceso <> 3) LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "products" WHERE (proceso <> 3) LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (proceso <> 3)[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "products" WHERE (proceso <> 3) LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProduct Load (3.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (proceso <> 3) ORDER BY "products"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mFormula Load (1.3ms)[0m  [1m[34mSELECT  descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (9.8ms)[0m  [1m[34mSELECT  descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/bundler/gems/activeadmin-01fefa139241/app/views/active_admin/resource/index.html.arb (2302.9ms)
+Completed 200 OK in 2461ms (Views: 2279.8ms | ActiveRecord: 62.0ms)
+
+

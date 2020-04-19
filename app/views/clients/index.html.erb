@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Centros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ruc</th>
+      <th>Razon</th>
+      <th>Direccion</th>
+      <th>Origen</th>
+      <th>Tipo</th>
+      <th>Obs</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.ruc %></td>
+        <td><%= client.razon %></td>
+        <td><%= client.direccion %></td>
+
+        <td><%=  Formula.where(product_id:12).where(orden:client.origen).
+                    select('descripcion as dd').first.dd.capitalize %></td>
+        
+        <td><%=  Formula.where(product_id:13).where(orden:client.tipo).
+                    select('descripcion as dd').first.dd.capitalize %></td>
+        <td><%= client.obs %></td>
+        <td style="width:60px;"><%= link_to 'Mostrar', client %></td>
+        <td style="width:60px;"><%= link_to 'Editar', edit_client_path(client) %></td>
+        <td style="width:60px;"><%= link_to 'Eliminar', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Centro', new_client_path %>

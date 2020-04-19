@@ -1,0 +1,47 @@
+
+     <header>
+      <nav class="be-red white large-padding" >
+	<ul class="no-list row between-xs middle-xs " >
+	   <li class="col-md">
+	    <h1 class="no-margin" id="logo"><%= link_to "Almacenes", root_path %> </h1>
+	  </li>
+
+
+         <li class="col-md" id="logo">
+         <%= link_to "Parametros", edit_parameter_path(1)  %>
+       </li>
+
+	          <li class="col-md" id="logo">
+            <%= link_to "Productos", products_path %>
+          </li>
+
+          <li class="col-md" id="logo">
+          <%= link_to "Centros", clients_path %>
+        </li>
+
+          <li class="col-md" id="logo">
+            <%= link_to "Partes", items_path %>
+          </li>
+
+           <% if user_signed_in? %>
+            <li class="col-md" id="logo">
+	      <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete  %>
+            </li>
+
+
+
+
+
+            <% else %>
+	    <li class="col-md" id="logo">
+           <%= link_to "Iniciar sesion", new_user_session_path %>
+	  </li>
+
+
+
+
+	   <% end %>
+
+       </ul>
+      </nav>
+     </header>

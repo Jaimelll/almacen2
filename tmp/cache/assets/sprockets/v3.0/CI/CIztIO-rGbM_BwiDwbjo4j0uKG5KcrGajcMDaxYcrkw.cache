@@ -1,0 +1,41 @@
+{:uriI"–file://app/assets/stylesheets/flexboxgrid-6.3.1/package.json?type=application/json&id=829bcc527bf7edf560c9837c5881595f24e81a24f6485fdedffd90c7f607b956:ET:load_pathI"app/assets/stylesheets;T:filenameI":app/assets/stylesheets/flexboxgrid-6.3.1/package.json;T:	nameI"flexboxgrid-6.3.1/package;T:logical_pathI"#flexboxgrid-6.3.1/package.json;T:content_typeI"application/json;T:sourceI"¥{
+  "name": "flexboxgrid",
+  "version": "6.3.1",
+  "description": "Grid based off of CSS3 flexbox specification",
+  "style": "dist/flexboxgrid.css",
+  "main": "dist/flexboxgrid.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kristoferjoseph/flexboxgrid.git"
+  },
+  "keywords": [
+    "browser",
+    "flexbox",
+    "grid",
+    "css"
+  ],
+  "author": "@dam",
+  "license": "Apache 2",
+  "bugs": {
+    "url": "https://github.com/kristoferjoseph/flexboxgrid/issues"
+  },
+  "homepage": "https://github.com/kristoferjoseph/flexboxgrid",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^0.7.2",
+    "grunt-contrib-cssmin": "^0.7.0",
+    "grunt-contrib-htmlmin": "^0.1.3",
+    "grunt-contrib-uglify": "^0.2.7",
+    "grunt-contrib-watch": "^0.5.3",
+    "grunt-myth": "^1.0.1",
+    "grunt-processhtml": "^0.2.9"
+  }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Hfile-digest://app/assets/stylesheets/flexboxgrid-6.3.1/package.json;TTF:charsetI"
+utf-8;F:digest"%ž!Ú¬T¸áyHöDú4ï˜ÑÅ×.2à5ØJ§:lengthi¥:dependencies_digest"%lQÏ§æªÄBñ¦Ê¹üþÌËˆAeõÌŽu'l`ejZ:idI"E829bcc527bf7edf560c9837c5881595f24e81a24f6485fdedffd90c7f607b956;F:
+mtimel+q…œ^

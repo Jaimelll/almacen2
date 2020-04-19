@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pfecha: 2016-12-19
+  serie: MyString
+  nfactu: MyString
+  client: one
+  subtotal: 1.5
+  origen: 1
+  mmes: 2016-12-19
+  moneda: 1
+  tc: 1.5
+
+two:
+  pfecha: 2016-12-19
+  serie: MyString
+  nfactu: MyString
+  client: two
+  subtotal: 1.5
+  origen: 1
+  mmes: 2016-12-19
+  moneda: 1
+  tc: 1.5

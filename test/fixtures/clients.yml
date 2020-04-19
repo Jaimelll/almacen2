@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ruc: MyString
+  razon: MyText
+  direccion: MyText
+  origen: 1
+  obs: MyText
+
+two:
+  ruc: MyString
+  razon: MyText
+  direccion: MyText
+  origen: 1
+  obs: MyText

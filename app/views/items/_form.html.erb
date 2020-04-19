@@ -1,0 +1,58 @@
+<%= form_for(item) do |f| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :Parametros %>
+
+    <%= f.collection_select :empresa, Formula.where(product_id:10).
+                     order(:orden), :orden, :descripcion  %>
+    <%= f.date_select :mmes, discard_day:true %>
+
+    <%= f.collection_select :origen, Formula.where(product_id:11).
+                       order(:orden), :orden, :descripcion  %>
+  </div>
+<br/>
+<br/>
+  <div class="field">
+    <%= f.label :Fecha %>
+    <%= f.date_select :pfecha %>
+  </div>
+  <% if Parameter.find_by_id(1).origen<5 %>
+<br/>
+    <div class="field">
+       <%= f.label :factura %>
+       <%= f.text_field :serie, :size=>3 %>
+       <%= f.text_field :nfactu %>
+
+   </div>
+
+   <div class="field">
+    <%= f.label :Razon %>
+    <%= f.collection_select :client_id, Client.all.
+             order(:razon), :id, :razon, html_options = {:style => "width:600px"}  %>
+   </div>
+
+
+   <div class="field">
+    <%= f.label :tc %>
+    <%= f.text_field :tc %>
+
+    <%= f.collection_select :moneda, Formula.where(product_id:8).
+                   order(:orden), :orden, :descripcion  %>
+   </div>
+  <% end %>
+<br/>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

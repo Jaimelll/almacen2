@@ -1,0 +1,14 @@
+tr{
+  border-bottom: solid;
+  border-width:1px;
+}
+td,th{
+  text-align:left;
+}
+table,tr,td,th,tbody,thead,tfoot {
+  page-break-inside: avoid !important;
+}
+.rep {
+  font: 40% sans-serif;
+  line-height: 100%;
+}

@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<h1>Mostrar Centro</h1>
+<p>
+  <strong>Ruc:</strong>
+  <%= @client.ruc %>
+</p>
+
+<p>
+  <strong>Razon:</strong>
+  <%= @client.razon %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @client.direccion %>
+</p>
+
+<p>
+  <strong>Origen:</strong>
+
+  <%= Formula.where(product_id:12).where(orden:@client.origen).
+              select('descripcion as dd').first.dd.capitalize   %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  
+  <%= Formula.where(product_id:13).where(orden:@client.tipo).
+              select('descripcion as dd').first.dd.capitalize   %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @client.obs %>
+</p>
+
+<%= link_to 'Editar', edit_client_path(@client) %> |
+<%= link_to 'Retroceder', clients_path %>

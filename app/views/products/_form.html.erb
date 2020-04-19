@@ -1,0 +1,83 @@
+<%= form_for(product) do |f| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre_descripcion%>
+    <%= f.text_field :nombre %>
+    <%= f.text_field :descripcion %>
+    <%=  f.check_box :activo %>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.label :precio %>
+    <%= f.text_field :precio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :peso %>
+    <%= f.text_field :peso %>
+  </div>
+
+  <div class="field">
+    <%= f.label :moneda %>
+
+    <%= f.collection_select :moneda, Formula.where(product_id:8).
+                             order(:orden), :orden, :descripcion%>
+  </div>
+
+  <div class="field">
+    <%= f.label :unidad %>
+    <%= f.select :unidad, [['unidad',1],['kg',2],['gal',3]] %>
+    <%= f.collection_select :unidad, Formula.where(product_id:9).
+                             order(:orden), :orden, :descripcion%>
+  </div>
+
+  <div class="field">
+    <%= f.label :client_id %>
+    <%= f.collection_select :client_id, Client.all.order(:razon), :id, :razon  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :material %>
+    <%= f.text_field :material %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lote %>
+    <%= f.text_field :lote %>
+  </div>
+
+  <div class="field">
+    <%= f.label :proceso %>
+
+   <%= f.collection_select :proceso, Formula.where(product_id:7).order(:orden), :orden, :descripcion  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :equivalente %>
+    <%= f.collection_select :equivalente, Product.all.order(:nombre), :id, :nombre, {:include_blank => ' sin equivalente'} %>
+
+  </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :conversion %>
+    <%= f.text_field :conversion %>
+  </div>
+<br/>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  empresa: 1
+  origen: 1
+  mes: 2017-01-23
+
+two:
+  empresa: 1
+  origen: 1
+  mes: 2017-01-23

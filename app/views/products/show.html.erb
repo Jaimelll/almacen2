@@ -1,0 +1,105 @@
+<p id="notice"><%= notice %></p>
+<h2>PRODUCTOS INGRESO DE FORMULA </h2>
+<p>
+  <strong>Nombre:</strong>
+  <%= @product.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @product.descripcion %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @product.precio %>
+</p>
+
+<p>
+  <strong>Moneda:</strong>
+  <%= Formula.where(product_id:8).where(orden:@product.moneda).
+              select('descripcion as dd').first.dd.capitalize   %>
+
+</p>
+
+<p>
+  <strong>Unidad:</strong>
+
+  <%= Formula.where(product_id:9).where(orden:@product.unidad).
+              select('descripcion as dd').first.dd.capitalize   %>
+
+</p>
+
+
+<% if @product.client_id!=881 %>
+<p>
+  <strong>Client:</strong>
+  <%= @product.client.razon %>
+</p>
+<% end %>
+
+
+<p>
+  <strong>Material:</strong>
+  <%= @product.material %>
+</p>
+
+<p>
+  <strong>Lote:</strong>
+  <%= @product.lote %>
+</p>
+
+<p>
+  <strong>Proceso:</strong>
+  
+  <%= Formula.where(product_id:7).where(orden:@product.proceso).
+              select('descripcion as dd').first.dd.capitalize   %>
+</p>
+
+<p>
+  <strong>Equivalente:</strong>
+  <%= Product.find_by_id(@product.equivalente).nombre if @product.equivalente %>
+</p>
+
+<p>
+  <strong>Conversion:</strong>
+  <%= @product.conversion %>
+</p>
+
+
+<h3>FORMULAS</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th  style="width:100px;">Material</th>
+      <th  style="width:100px;">descripcion</th>
+      <th  style="width:100px;">Cantidad</th>
+      <th  style="width:100px;">orden</th>
+      <th  style="width:100px;">Producto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @product.formulas.order('orden ASC').each do |formula| %>
+      <tr>
+        <td><%= Product.find_by_id(formula.material).nombre if formula.material %></td>
+        <td><%= formula.descripcion %></td>
+        <td><%= formula.cantidad %></td>
+        <td><%= formula.orden %></td>
+        <td><%= formula.product_id %></td>
+        <td  style="width:100px;"><%= link_to 'Editar', edit_product_formula_path(@product,formula) %></td>
+        <td  style="width:100px;"><%= link_to 'Eliminar', product_formula_path(@product,formula), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h3><%= link_to 'Nueva Formula', new_product_formula_path(@product) %></h3>
+<p></p>
+
+<%= link_to 'Editar', edit_product_path(@product) %> |
+<%= link_to 'Retroceder', products_path %>

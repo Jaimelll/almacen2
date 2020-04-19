@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Productos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th  style="width:250px;">Nombre</th>
+      <th  style="width:50px;">peso</th>
+      <th  style="width:50px;">Precio</th>
+      <th  style="width:50px;">Moneda</th>
+      <th  style="width:50px;">Unidad</th>
+      <th  style="width:300px;">Client</th>
+      <th  style="width:80px;">Material</th>
+      <th  style="width:50px;">Lote</th>
+      <th  style="width:50px;">Activo</th>
+
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.nombre %></td>
+        <td><%= product.peso %></td>
+        <td><%= product.precio %></td>
+        <td><%= product.moneda %></td>
+        <td><%= product.unidad %></td>
+        <% if product.client_id!=881 %>
+        <td><%= product.client.razon if product.client %></td>
+        <% else %>
+          <td> Interno </td>
+        <% end %>
+        <td><%= product.material %></td>
+        <td><%= product.lote %></td>
+        <td><%= product.activo %></td>
+
+        <td  style="width:60px;"><%= link_to 'Mostrar', product %></td>
+        <td  style="width:60px;"><%= link_to 'Editar', edit_product_path(product) %></td>
+        
+        <td  style="width:60px;"><%= link_to_if(Formula.where(product_id:product.id).count==0, 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' }) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Producto', new_product_path %>

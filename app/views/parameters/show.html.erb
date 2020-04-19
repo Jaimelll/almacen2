@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Empresa:</strong>
+
+  <%= Formula.where(product_id:10).where(orden:@parameter.empresa).
+              select('descripcion as dd').first.dd.capitalize   %>
+</p>
+
+<p>
+  <strong>Origen:</strong>
+
+  <%= Formula.where(product_id:11).where(orden:@parameter.origen).
+              select('descripcion as dd').first.dd.capitalize   %>
+</p>
+
+<p>
+  <strong>Mes:</strong>
+  <%= @parameter.mes.strftime("%B-%Y") %>
+</p>
+
+<%= link_to 'Edit', edit_parameter_path(@parameter) %> |
