@@ -61,3 +61,23 @@ Processing by Admin::ProductsController#index as HTML
 Completed 200 OK in 2461ms (Views: 2279.8ms | ActiveRecord: 62.0ms)
 
 
+  [1m[36mClient Load (7.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+Started GET "/" for ::1 at 2020-04-19 12:25:59 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (4.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.4.1/bundler/gems/activeadmin-01fefa139241/app/views/active_admin/page/index.html.arb
+  [1m[36mParameter Load (0.7ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (3.0ms)[0m  [1m[34mSELECT  descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (18.4ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 2], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.4.1/bundler/gems/activeadmin-01fefa139241/app/views/active_admin/page/index.html.arb (2238.1ms)
+Completed 200 OK in 2508ms (Views: 2263.6ms | ActiveRecord: 66.5ms)
+
+
