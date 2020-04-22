@@ -223,3 +223,82 @@ Processing by Admin::ClientsController#index as HTML
 Completed 200 OK in 570ms (Views: 518.6ms | ActiveRecord: 17.8ms | Allocations: 116757)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055d2173d3788>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055d2173d3788>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (19.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+Started GET "/" for ::1 at 2020-04-21 22:00:34 -0700
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Started GET "/admin/login" for ::1 at 2020-04-21 22:00:34 -0700
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/shared/_links.erb (Duration: 5.6ms | Allocations: 626)
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 47.3ms | Allocations: 17812)
+Completed 200 OK in 4893ms (Views: 4827.3ms | ActiveRecord: 13.5ms | Allocations: 692475)
+
+
+Started POST "/admin/login" for ::1 at 2020-04-21 22:00:42 -0700
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"il48TmyIyqY0BFE25msvxmKlgmtrcZ7gVxslSaDvHYqg6DLiSpDUeQ03haKpSuIAaJ69QViL0bGe+PH4Cv814A==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jaduran0102@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 565ms (ActiveRecord: 12.8ms | Allocations: 3662)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"il48TmyIyqY0BFE25msvxmKlgmtrcZ7gVxslSaDvHYqg6DLiSpDUeQ03haKpSuIAaJ69QViL0bGe+PH4Cv814A==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/shared/_links.erb (Duration: 0.9ms | Allocations: 100)
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 42.5ms | Allocations: 13310)
+Completed 200 OK in 434ms (Views: 88.3ms | ActiveRecord: 0.0ms | Allocations: 31898)
+
+
+Started POST "/admin/login" for ::1 at 2020-04-21 22:00:50 -0700
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CeNYyNjRh1dOulCwqP0vgDq/8ozySrmHYVf3mRDwbwAjVVZk/smZiHeJhCTn3OJGMITNpsGw9taotCMouuBHag==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jaduran0102@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (6.2ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "last_sign_in_ip" = $3, "sign_in_count" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["current_sign_in_at", "2020-04-22 05:00:50.718164"], ["last_sign_in_at", "2020-04-21 23:23:14.308103"], ["last_sign_in_ip", "::1"], ["sign_in_count", 162], ["updated_at", "2020-04-22 05:00:50.719307"], ["id", 1]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 417ms (ActiveRecord: 12.9ms | Allocations: 6275)
+
+
+Started GET "/" for ::1 at 2020-04-21 22:00:50 -0700
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/page/index.html.arb
+  [1m[36mParameter Load (1.6ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (8.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (17.7ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 2], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/page/index.html.arb (Duration: 322.3ms | Allocations: 39229)
+Completed 200 OK in 369ms (Views: 254.4ms | ActiveRecord: 78.4ms | Allocations: 42077)
+
+
