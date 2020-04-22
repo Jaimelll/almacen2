@@ -519,3 +519,291 @@ Processing by Admin::ClientsController#index as HTML
 Completed 200 OK in 1883ms (Views: 1679.1ms | ActiveRecord: 61.7ms | Allocations: 197427)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055e7334fbaf8>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055e7334fbaf8>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (33.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+Started GET "/" for ::1 at 2020-04-22 09:00:20 -0700
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 33ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Started GET "/admin/login" for ::1 at 2020-04-22 09:00:21 -0700
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/shared/_links.erb (Duration: 10.3ms | Allocations: 626)
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 290.0ms | Allocations: 17815)
+Completed 200 OK in 1695ms (Views: 1572.9ms | ActiveRecord: 6.8ms | Allocations: 103283)
+
+
+Started POST "/admin/login" for ::1 at 2020-04-22 09:00:25 -0700
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ON3ErLWABzKOwbazgoQhZ0H3LiN59Ji9D5uMl/Fg5CIwsJseBd/cjz6KrUV+TPzaO0bpl2OzdQCTHvA3pmv3BA==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jaduran0102@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 496ms (ActiveRecord: 8.1ms | Allocations: 3662)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ON3ErLWABzKOwbazgoQhZ0H3LiN59Ji9D5uMl/Fg5CIwsJseBd/cjz6KrUV+TPzaO0bpl2OzdQCTHvA3pmv3BA==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/shared/_links.erb (Duration: 1.7ms | Allocations: 100)
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 42.5ms | Allocations: 13310)
+Completed 200 OK in 412ms (Views: 83.7ms | ActiveRecord: 0.0ms | Allocations: 31451)
+
+
+Started POST "/admin/login" for ::1 at 2020-04-22 09:00:34 -0700
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MzDSC+lSMuQeK8I6WtanxXjejV46B2ztpPJ3VFAR3HE7XY25WQ3pWa5g2cymHnp4Am9K6iBAgVA4dwv0BxrPVw==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jaduran0102@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (6.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2020-04-22 16:00:35.112941"], ["last_sign_in_at", "2020-04-22 05:00:50.718164"], ["sign_in_count", 163], ["updated_at", "2020-04-22 16:00:35.114023"], ["id", 1]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 454ms (ActiveRecord: 14.1ms | Allocations: 6327)
+
+
+Started GET "/" for ::1 at 2020-04-22 09:00:35 -0700
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/page/index.html.arb
+  [1m[36mParameter Load (7.8ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (4.7ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 2], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE Parameter Load (0.1ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/page/index.html.arb (Duration: 241.9ms | Allocations: 39228)
+Completed 200 OK in 285ms (Views: 192.8ms | ActiveRecord: 59.4ms | Allocations: 42074)
+
+
+Started GET "/admin/items" for ::1 at 2020-04-22 09:00:39 -0700
+Processing by Admin::ItemsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParameter Load (2.5ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb
+  [1m[36mCACHE Parameter Load (0.1ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 AND "items"."client_id" = $4[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["client_id", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 AND "items"."client_id" != $4[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["client_id", 1]]
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 LIMIT $4 OFFSET $5) subquery_for_count[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 LIMIT $4 OFFSET $5) subquery_for_count[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 LIMIT $4 OFFSET $5) subquery_for_count[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mItem Load (5.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 ORDER BY "items"."id" desc, pfecha ASC, serie, nfactu LIMIT $4 OFFSET $5[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mClient Load (4.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1082], ["LIMIT", 1]]
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1081], ["LIMIT", 1]]
+  [1m[36mClient Load (1.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1103], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (1.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb (Duration: 576.8ms | Allocations: 86413)
+Completed 200 OK in 642ms (Views: 562.9ms | ActiveRecord: 37.4ms | Allocations: 90574)
+
+
+Started GET "/admin/items/new" for ::1 at 2020-04-22 09:00:43 -0700
+Processing by Admin::ItemsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/new.html.arb
+  [1m[36mParameter Load (2.9ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.8ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 16]]
+  [1m[36mClient Load (9.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY ruc ASC[0m
+  [1m[36mFormula Load (0.7ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 8]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (6.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY nombre ASC[0m
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.9ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.3ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/new.html.arb (Duration: 827.1ms | Allocations: 140111)
+Completed 200 OK in 839ms (Views: 785.5ms | ActiveRecord: 46.9ms | Allocations: 142850)
+
+
+Started POST "/admin/items" for ::1 at 2020-04-22 09:01:05 -0700
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Fp5bU4lhlfMn12icxJFz7a67RzsdtLeeEMwOXsDFVLT1mdfd/5vn5yAb0+tk27ywVqvqdYfOc5zOZvNaKjwIqw==", "item"=>{"pfecha"=>"13/02/2020", "serie"=>"sdss", "nfactu"=>"ds", "sele1"=>"", "client_id"=>"881", "moneda"=>"1", "tc"=>"0.01", "sele"=>"", "origen"=>"1", "mmes"=>"2020-02-01", "empresa"=>"7", "user_id"=>"1", "subtotal"=>"0", "details_attributes"=>{"0"=>{"product_id"=>"", "descripcion"=>"", "cantidad"=>"", "monto"=>"", "precio"=>"0", "user_id"=>"1"}}}, "commit"=>"Create Item"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClient Load (1.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 881], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "items" WHERE "items"."nfactu" = $1 AND "items"."serie" = $2 AND "items"."client_id" = $3 AND "items"."sele1" IS NULL LIMIT $4[0m  [["nfactu", "ds"], ["serie", "sdss"], ["client_id", 881], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/new.html.arb
+  [1m[36mParameter Load (0.9ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.6ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 16]]
+  [1m[36mClient Load (18.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY ruc ASC[0m
+  [1m[36mFormula Load (1.1ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 8]]
+  [1m[36mCACHE Parameter Load (0.1ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.1ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.1ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY nombre ASC[0m
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY nombre ASC[0m
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (1.2ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/new.html.arb (Duration: 624.4ms | Allocations: 140161)
+Completed 200 OK in 905ms (Views: 602.9ms | ActiveRecord: 35.1ms | Allocations: 152514)
+
+
+Started POST "/admin/items" for ::1 at 2020-04-22 09:01:12 -0700
+Processing by Admin::ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C6Wvgh4J/HHFA9+bNrJHYKfSwHKDxNe3wFpdtR1QriDooiMMaPOOZcLPZOyW+Ig9X8JtPBm+E7Ue8KCx96nyPw==", "item"=>{"pfecha"=>"13/02/2020", "serie"=>"sdss", "nfactu"=>"ds", "sele1"=>"", "client_id"=>"881", "moneda"=>"1", "tc"=>"0.01", "sele"=>"", "origen"=>"1", "mmes"=>"2020-02-01", "empresa"=>"7", "user_id"=>"1", "subtotal"=>"0"}, "commit"=>"Create Item"}
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (5.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 881], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Exists? (6.4ms)[0m  [1m[34mSELECT 1 AS one FROM "items" WHERE "items"."nfactu" = $1 AND "items"."serie" = $2 AND "items"."client_id" = $3 AND "items"."sele1" IS NULL LIMIT $4[0m  [["nfactu", "ds"], ["serie", "sdss"], ["client_id", 881], ["LIMIT", 1]]
+  [1m[36mItem Create (17.2ms)[0m  [1m[32mINSERT INTO "items" ("pfecha", "serie", "nfactu", "subtotal", "origen", "mmes", "tc", "user_id", "created_at", "updated_at", "empresa") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["pfecha", "2020-02-13"], ["serie", "sdss"], ["nfactu", "ds"], ["subtotal", 0.0], ["origen", 1], ["mmes", "2020-02-01"], ["tc", 0.01], ["user_id", 1], ["created_at", "2020-04-22 16:01:12.629922"], ["updated_at", "2020-04-22 16:01:12.629922"], ["empresa", 7]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/items/7255
+Completed 302 Found in 118ms (ActiveRecord: 43.9ms | Allocations: 5397)
+
+
+Started GET "/admin/items/7255" for ::1 at 2020-04-22 09:01:12 -0700
+Processing by Admin::ItemsController#show as HTML
+  Parameters: {"id"=>"7255"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7255], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/show.html.arb
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1[0m  [["id", 7255]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" IS NULL[0m  [["product_id", 16]]
+  [1m[36mClient Load (1.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 881], ["LIMIT", 1]]
+  [1m[35m (11.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "details" WHERE "details"."item_id" = $1[0m  [["item_id", 7255]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT SUM("details"."monto") FROM "details" WHERE "details"."item_id" = $1[0m  [["item_id", 7255]]
+  [1m[36mFormula Load (2.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 8], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mDetail Load (2.1ms)[0m  [1m[34mSELECT "details".* FROM "details" WHERE "details"."item_id" = $1[0m  [["item_id", 7255]]
+  [1m[36mParameter Load (0.8ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (19.8ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1[0m  [["id", 7255]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/show.html.arb (Duration: 415.4ms | Allocations: 32151)
+Completed 200 OK in 437ms (Views: 377.4ms | ActiveRecord: 48.7ms | Allocations: 35037)
+
+
+Started GET "/admin/items/7255/edit" for ::1 at 2020-04-22 09:01:16 -0700
+Processing by Admin::ItemsController#edit as HTML
+  Parameters: {"id"=>"7255"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (14.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7255], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7255], ["LIMIT", 1]]
+  [1m[36mParameter Load (0.7ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.8ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 16]]
+  [1m[36mClient Load (11.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY ruc ASC[0m
+  [1m[36mFormula Load (1.9ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 8]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDetail Load (2.4ms)[0m  [1m[34mSELECT "details".* FROM "details" WHERE "details"."item_id" = $1[0m  [["item_id", 7255]]
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY nombre ASC[0m
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (1.6ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/edit.html.arb (Duration: 511.4ms | Allocations: 118653)
+Completed 200 OK in 583ms (Views: 522.5ms | ActiveRecord: 39.7ms | Allocations: 121401)
+
+
+Started PATCH "/admin/items/7255" for ::1 at 2020-04-22 09:01:25 -0700
+Processing by Admin::ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nPsax521LgoKoRfBiCW2HMsk0wsgnpygjYt9lwsegKJ//JZJ609cHg1trLYob3lBMzR+RbrkWKJTIYCT4efcvQ==", "item"=>{"pfecha"=>"2020-02-13", "serie"=>"sdss", "nfactu"=>"ds", "sele1"=>"", "client_id"=>"881", "moneda"=>"1", "tc"=>"0.01", "sele"=>"", "origen"=>"1", "mmes"=>"2020-02-01", "empresa"=>"7", "user_id"=>"1", "subtotal"=>"0", "details_attributes"=>{"0"=>{"product_id"=>"", "descripcion"=>"vvv", "cantidad"=>"vv", "monto"=>"vv", "precio"=>"0", "user_id"=>"1"}}}, "commit"=>"Update Item", "id"=>"7255"}
+  [1m[36mUser Load (46.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (4.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7255], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mClient Load (1.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 881], ["LIMIT", 1]]
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "items" WHERE "items"."nfactu" = $1 AND "items"."id" != $2 AND "items"."serie" = $3 AND "items"."client_id" = $4 AND "items"."sele1" IS NULL LIMIT $5[0m  [["nfactu", "ds"], ["id", 7255], ["serie", "sdss"], ["client_id", 881], ["LIMIT", 1]]
+  [1m[36mDetail Create (8.5ms)[0m  [1m[32mINSERT INTO "details" ("descripcion", "cantidad", "precio", "monto", "item_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["descripcion", "vvv"], ["cantidad", 0.0], ["precio", 0.0], ["monto", 0.0], ["item_id", 7255], ["user_id", 1], ["created_at", "2020-04-22 16:01:25.974300"], ["updated_at", "2020-04-22 16:01:25.974300"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/items/7255
+Completed 302 Found in 226ms (ActiveRecord: 72.0ms | Allocations: 9297)
+
+
+Started GET "/admin/items/7255" for ::1 at 2020-04-22 09:01:26 -0700
+Processing by Admin::ItemsController#show as HTML
+  Parameters: {"id"=>"7255"}
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 7255], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/show.html.arb
+  [1m[36mItem Load (2.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1[0m  [["id", 7255]]
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" IS NULL[0m  [["product_id", 16]]
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 881], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "details" WHERE "details"."item_id" = $1[0m  [["item_id", 7255]]
+  [1m[36mDetail Load (1.9ms)[0m  [1m[34mSELECT "details".* FROM "details" WHERE "details"."item_id" = $1 AND (monto>0 and cantidad>0)[0m  [["item_id", 7255]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT SUM("details"."monto") FROM "details" WHERE "details"."item_id" = $1[0m  [["item_id", 7255]]
+  [1m[36mFormula Load (1.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 8], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mDetail Load (1.6ms)[0m  [1m[34mSELECT "details".* FROM "details" WHERE "details"."item_id" = $1[0m  [["item_id", 7255]]
+  [1m[36mParameter Load (2.4ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (1.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (1.9ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.1ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1[0m  [["id", 7255]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/show.html.arb (Duration: 295.5ms | Allocations: 31775)
+Completed 200 OK in 334ms (Views: 290.2ms | ActiveRecord: 31.7ms | Allocations: 33719)
+
+

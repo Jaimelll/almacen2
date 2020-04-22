@@ -55,8 +55,8 @@ end
 filter :pfecha, label:'Fecha'
 filter :serie
 filter :nfactu, label:'Factura'
-##filter :client_id, :label => 'Centro', :as => :select, :collection =>
-##        Client.all.order('razon ASC').map{|u| ["#{u.razon.capitalize}---RUC#{u.ruc}", u.id]}
+filter :client_id, :label => 'Centro', :as => :select, :collection =>
+        Client.all.order('razon ASC').map{|u| ["#{u.razon.capitalize}---RUC#{u.ruc}", u.id]}
 
 
 
@@ -112,7 +112,7 @@ form :title => 'Edicion Comprobante'  do |f|
        f.input :tc,:as =>:string, :input_html => { :rows => 2,:style =>  'width:30%'}
        f.input :sele, :label => 'Codigo', :input_html => { :rows => 2,:style =>  'width:30%'}
        f.input :origen, :input_html => { :value => Parameter.find_by_id(1).origen }, :as => :hidden
-      
+       f.input :mmes,:as =>:string, :input_html => { :value => Parameter.find_by_id(1).mes }, :as => :hidden
        f.input :empresa, :input_html => { :value => Parameter.find_by_id(1).empresa }, :as => :hidden
        f.input :user_id, :input_html => { :value => current_user.id }, :as => :hidden
        f.input :subtotal, :input_html => { :value => 0}, :as => :hidden
@@ -129,7 +129,7 @@ form :title => 'Edicion Comprobante'  do |f|
         a.input :descripcion, :input_html => { :rows => 2,:style =>  'width:30%'}
         a.input :cantidad,:as =>:string, :input_html => { :style =>  'width:30%'}
         a.input :monto,:as =>:string, :input_html => { :style =>  'width:30%'}
-       
+        a.input :precio,:as =>:string, :input_html => {:value =>0, :style =>  'width:30%'}, :as => :hidden
         a.input :user_id, :input_html => { :value => current_user.id }, :as => :hidden
 
       end
