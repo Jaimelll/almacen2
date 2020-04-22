@@ -420,3 +420,102 @@ Processing by Admin::ClientsController#index as HTML
 Completed 200 OK in 1090ms (Views: 1040.4ms | ActiveRecord: 23.2ms | Allocations: 117452)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x00005585d438c110>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x00005585d438c110>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+Started GET "/admin/clients" for ::1 at 2020-04-21 22:34:40 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::ClientsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (tipo = 2)[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (tipo = 1)[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (origen = 1)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (origen = 2)[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mClient Load (3.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY "clients"."id" desc, razon ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mFormula Load (1.6ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (1.3ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.2ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (3.4ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.3ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb (Duration: 1678.7ms | Allocations: 179133)
+Completed 200 OK in 1883ms (Views: 1679.1ms | ActiveRecord: 61.7ms | Allocations: 197427)
+
+

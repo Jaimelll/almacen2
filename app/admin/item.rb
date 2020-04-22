@@ -55,8 +55,8 @@ end
 filter :pfecha, label:'Fecha'
 filter :serie
 filter :nfactu, label:'Factura'
-filter :client_id, :label => 'Centro', :as => :select, :collection =>
-        Client.all.order('razon ASC').map{|u| ["#{u.razon.capitalize}---RUC#{u.ruc}", u.id]}
+##filter :client_id, :label => 'Centro', :as => :select, :collection =>
+##        Client.all.order('razon ASC').map{|u| ["#{u.razon.capitalize}---RUC#{u.ruc}", u.id]}
 
 
 
