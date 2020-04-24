@@ -56,7 +56,7 @@ ActiveAdmin.register Detail do
                    f.input :descripcion, :input_html => { :rows => 2,:style =>  'width:30%'}
                    f.input :cantidad,:as =>:string, :input_html => { :style =>  'width:30%'}
                    f.input :precio,:as =>:string, :input_html => { :style =>  'width:30%'}
-                   f.input :monto,:as =>:string, :input_html => {:value =>0, :style =>  'width:30%'}, :as => :hidden
+
                    f.input :user_id, :input_html => { :value => current_user.id }, :as => :hidden
   
   

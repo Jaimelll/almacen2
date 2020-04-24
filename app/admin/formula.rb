@@ -54,8 +54,7 @@ ActiveAdmin.register Formula do
                          select('nombre as dd').first.dd.capitalize
                f.inputs "#{nn}" do
   
-                f.input :product_id, :label => 'Producto', :as => :select, :collection =>
-                        Product.all.order('nombre ASC').map{|u| [u.nombre, u.id]}, :as => :hidden
+  
                  f.input :material, :label => 'Material', :as => :select, :collection =>
                                Product.all.order('nombre ASC').map{|u| [u.nombre, u.id]}
                  f.input :descripcion, :input_html => { :style =>  'width:30%'}

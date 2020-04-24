@@ -807,3 +807,1546 @@ Processing by Admin::ItemsController#show as HTML
 Completed 200 OK in 334ms (Views: 290.2ms | ActiveRecord: 31.7ms | Allocations: 33719)
 
 
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055c38d9b96b8>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055c38d9b96b8>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (16.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+Started GET "/" for ::1 at 2020-04-22 16:53:26 -0700
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 22ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Started GET "/admin/login" for ::1 at 2020-04-22 16:53:26 -0700
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/shared/_links.erb (Duration: 1.9ms | Allocations: 626)
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 63.2ms | Allocations: 17812)
+Completed 200 OK in 425ms (Views: 378.5ms | ActiveRecord: 5.0ms | Allocations: 103728)
+
+
+Started POST "/admin/login" for ::1 at 2020-04-22 16:53:33 -0700
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mIEMuC2djfbHMn3JAwGCVCglAME9zvLI3sCMliEmCJBR6gUAIvex5CYmh8nZVWayzWGJrhu5VRZcwvBiBDbk8w==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jaduran0102@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (3.1ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2020-04-22 23:53:33.883061"], ["last_sign_in_at", "2020-04-22 16:00:35.112941"], ["sign_in_count", 164], ["updated_at", "2020-04-22 23:53:33.884457"], ["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 392ms (ActiveRecord: 9.8ms | Allocations: 8310)
+
+
+Started GET "/" for ::1 at 2020-04-22 16:53:33 -0700
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/page/index.html.arb
+  [1m[36mParameter Load (1.8ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (3.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 2], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/page/index.html.arb (Duration: 117.8ms | Allocations: 39231)
+Completed 200 OK in 147ms (Views: 115.3ms | ActiveRecord: 23.9ms | Allocations: 42077)
+
+
+Started GET "/admin/clients" for ::1 at 2020-04-22 16:53:40 -0700
+Processing by Admin::ClientsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (tipo = 2)[0m
+  [1m[35m (10.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (tipo = 1)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (origen = 1)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (origen = 2)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mClient Load (1.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY "clients"."id" desc, razon ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mFormula Load (0.5ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (1.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.6ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb (Duration: 447.1ms | Allocations: 112460)
+Completed 200 OK in 483ms (Views: 431.6ms | ActiveRecord: 23.0ms | Allocations: 116242)
+
+
+Started GET "/admin/clients/new" for ::1 at 2020-04-22 16:53:42 -0700
+Processing by Admin::ClientsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/new.html.arb
+  [1m[36mFormula Load (0.3ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 13]]
+  [1m[36mFormula Load (0.8ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 12]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/new.html.arb (Duration: 102.9ms | Allocations: 45085)
+Completed 200 OK in 128ms (Views: 114.5ms | ActiveRecord: 1.7ms | Allocations: 47791)
+
+
+Started POST "/admin/clients" for ::1 at 2020-04-22 16:53:47 -0700
+Processing by Admin::ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mDZSqf2l1a+8lDHsDO7gY3vROHqa0jhx/d01KD1sPA5X9p++DgFTJu8b7CGBjqJSbl3caQwj1TYWZAXoLRpKXw==", "client"=>{"ruc"=>"000022222", "razon"=>"", "direccion"=>"", "tipo"=>"1", "origen"=>"1", "user_id"=>"1"}, "commit"=>"Create Client"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."ruc" = $1 LIMIT $2[0m  [["ruc", "000022222"], ["LIMIT", 1]]
+  [1m[36mClient Exists? (5.1ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."razon" = $1 LIMIT $2[0m  [["razon", ""], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/new.html.arb
+  [1m[36mFormula Load (0.9ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 13]]
+  [1m[36mFormula Load (0.5ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 12]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/new.html.arb (Duration: 83.4ms | Allocations: 43013)
+Completed 200 OK in 158ms (Views: 84.1ms | ActiveRecord: 11.2ms | Allocations: 54032)
+
+
+Started POST "/admin/clients" for ::1 at 2020-04-22 16:53:59 -0700
+Processing by Admin::ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ezLOsoB1To9nJBaPm9qu2ro8fs9OyV+3jx1/Cffntrm08gOlc9HIBjSry0IWuuzrr7Ca3Ng4svBkpE/J55HA6A==", "client"=>{"ruc"=>"000022222", "razon"=>"lñlññ", "direccion"=>"ñlk", "tipo"=>"2", "origen"=>"2", "user_id"=>"1"}, "commit"=>"Create Client"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (5.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."ruc" = $1 LIMIT $2[0m  [["ruc", "000022222"], ["LIMIT", 1]]
+  [1m[36mClient Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."razon" = $1 LIMIT $2[0m  [["razon", "lñlññ"], ["LIMIT", 1]]
+  [1m[36mClient Create (9.5ms)[0m  [1m[32mINSERT INTO "clients" ("ruc", "razon", "direccion", "tipo", "origen", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["ruc", "000022222"], ["razon", "lñlññ"], ["direccion", "ñlk"], ["tipo", 2], ["origen", 2], ["created_at", "2020-04-22 23:53:59.865712"], ["updated_at", "2020-04-22 23:53:59.865712"], ["user_id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/clients/1104
+Completed 302 Found in 53ms (ActiveRecord: 21.2ms | Allocations: 4833)
+
+
+Started GET "/admin/clients/1104" for ::1 at 2020-04-22 16:53:59 -0700
+Processing by Admin::ClientsController#show as HTML
+  Parameters: {"id"=>"1104"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (2.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1104], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/show.html.arb
+  [1m[36mFormula Load (0.4ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 2], ["LIMIT", 1]]
+  [1m[36mFormula Load (1.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/show.html.arb (Duration: 131.8ms | Allocations: 25470)
+Completed 200 OK in 154ms (Views: 136.8ms | ActiveRecord: 7.7ms | Allocations: 28333)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055e826436f20>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055e826436f20>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (4.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+Started GET "/admin/clients" for ::1 at 2020-04-22 17:06:25 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::ClientsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (tipo = 2)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (tipo = 1)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (origen = 1)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (origen = 2)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mClient Load (1.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY "clients"."id" desc, razon ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mFormula Load (0.6ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 2], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.5ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (1.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.5ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.8ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 2], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.7ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb (Duration: 564.9ms | Allocations: 173244)
+Completed 200 OK in 629ms (Views: 558.5ms | ActiveRecord: 25.1ms | Allocations: 190650)
+
+
+Started GET "/admin/clients/new" for ::1 at 2020-04-22 17:06:27 -0700
+Processing by Admin::ClientsController#new as HTML
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/new.html.arb
+  [1m[36mFormula Load (1.0ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 13]]
+  [1m[36mFormula Load (2.6ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 12]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/new.html.arb (Duration: 122.2ms | Allocations: 45994)
+Completed 200 OK in 152ms (Views: 135.9ms | ActiveRecord: 9.8ms | Allocations: 48742)
+
+
+Started POST "/admin/clients" for ::1 at 2020-04-22 17:06:38 -0700
+Processing by Admin::ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W+uyaQHnV5nZKbaRl+ZUyWCAqW4o394TZrMd1/NxFZuUK39+8kPREIqma1wahhb4dQxNfb4uM1SNCi0X4wdjyg==", "client"=>{"ruc"=>"000022222", "razon"=>"ffff", "direccion"=>"fff", "tipo"=>"1", "origen"=>"1", "user_id"=>"1"}, "commit"=>"Create Client"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Exists? (3.9ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."ruc" = $1 LIMIT $2[0m  [["ruc", "000022222"], ["LIMIT", 1]]
+  [1m[36mClient Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."razon" = $1 LIMIT $2[0m  [["razon", "ffff"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/new.html.arb
+  [1m[36mFormula Load (0.5ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 13]]
+  [1m[36mFormula Load (0.7ms)[0m  [1m[34mSELECT "formulas".* FROM "formulas" WHERE "formulas"."product_id" = $1[0m  [["product_id", 12]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/new.html.arb (Duration: 65.7ms | Allocations: 43014)
+Completed 200 OK in 155ms (Views: 66.5ms | ActiveRecord: 8.5ms | Allocations: 54916)
+
+
+Started POST "/admin/clients" for ::1 at 2020-04-22 17:06:45 -0700
+Processing by Admin::ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GKtpnabRtmtdRNfkQ92sQP4WnFM1BpNDtzJ5mx99S/LXa6SKVXUw4g7LCinOve5x65p4QKP3fgRci0lbDws9ow==", "client"=>{"ruc"=>"0000222244", "razon"=>"ffff", "direccion"=>"fff", "tipo"=>"1", "origen"=>"1", "user_id"=>"1"}, "commit"=>"Create Client"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."ruc" = $1 LIMIT $2[0m  [["ruc", "0000222244"], ["LIMIT", 1]]
+  [1m[36mClient Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "clients" WHERE "clients"."razon" = $1 LIMIT $2[0m  [["razon", "ffff"], ["LIMIT", 1]]
+  [1m[36mClient Create (4.5ms)[0m  [1m[32mINSERT INTO "clients" ("ruc", "razon", "direccion", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["ruc", "0000222244"], ["razon", "ffff"], ["direccion", "fff"], ["created_at", "2020-04-23 00:06:45.446373"], ["updated_at", "2020-04-23 00:06:45.446373"], ["user_id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/clients/1105
+Completed 302 Found in 46ms (ActiveRecord: 17.7ms | Allocations: 4861)
+
+
+Started GET "/admin/clients/1105" for ::1 at 2020-04-22 17:06:45 -0700
+Processing by Admin::ClientsController#show as HTML
+  Parameters: {"id"=>"1105"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1105], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/show.html.arb
+  [1m[36mFormula Load (0.5ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.9ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/show.html.arb (Duration: 43.0ms | Allocations: 25471)
+Completed 200 OK in 55ms (Views: 43.2ms | ActiveRecord: 2.6ms | Allocations: 28334)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055fe72f41a20>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055fe72f41a20>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (5.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055af8bb74c20>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055af8bb74c20>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (4.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+Started GET "/" for ::1 at 2020-04-22 18:01:30 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Started GET "/admin/login" for ::1 at 2020-04-22 18:01:30 -0700
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/shared/_links.erb (Duration: 1.1ms | Allocations: 626)
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 38.1ms | Allocations: 17812)
+Completed 200 OK in 209ms (Views: 181.1ms | ActiveRecord: 4.6ms | Allocations: 102973)
+
+
+Started POST "/admin/login" for ::1 at 2020-04-22 18:01:35 -0700
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ArK2SO08nqSjFWgwi5NEIJ9RlPKCTvlgfBA9WtF1zPkkP3FSBGDhL3CB/lYzGYatqHvqiO7otqmtzyJCqaZ3fw==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jaduran0102@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2020-04-23 01:01:35.191456"], ["last_sign_in_at", "2020-04-22 23:53:33.883061"], ["sign_in_count", 165], ["updated_at", "2020-04-23 01:01:35.192012"], ["id", 1]]
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 197ms (ActiveRecord: 13.8ms | Allocations: 8312)
+
+
+Started GET "/" for ::1 at 2020-04-22 18:01:35 -0700
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/page/index.html.arb
+  [1m[36mParameter Load (1.2ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.5ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 2], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/page/index.html.arb (Duration: 191.6ms | Allocations: 39214)
+Completed 200 OK in 212ms (Views: 181.6ms | ActiveRecord: 18.8ms | Allocations: 42060)
+
+
+Started GET "/admin/clients" for ::1 at 2020-04-22 18:01:39 -0700
+Processing by Admin::ClientsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (tipo = 2)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (tipo = 1)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (origen = 1)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (origen = 2)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mClient Load (1.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY "clients"."id" desc, razon ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mFormula Load (0.5ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.4ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.8ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.6ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb (Duration: 459.3ms | Allocations: 112486)
+Completed 200 OK in 485ms (Views: 453.1ms | ActiveRecord: 11.5ms | Allocations: 116267)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000056204e4f5e10>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000056204e4f5e10>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (4.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x00005620e0a49d20>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x00005620e0a49d20>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (3.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000056544c15e248>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000056544c15e248>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (3.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x0000558d93f17888>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x0000558d93f17888>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (3.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x00005556e2f850a0>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x00005556e2f850a0>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (3.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x00005617abd94108>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x00005617abd94108>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (3.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+  [1m[35m (5036.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "almacend"[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055738011a9b0>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055738011a9b0>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (3.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+Started GET "/" for ::1 at 2020-04-22 18:16:36 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/page/index.html.arb
+  [1m[36mParameter Load (0.4ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.9ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 2], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/page/index.html.arb (Duration: 295.2ms | Allocations: 91219)
+Completed 200 OK in 370ms (Views: 273.2ms | ActiveRecord: 34.3ms | Allocations: 107048)
+
+
+Started GET "/admin/logout" for ::1 at 2020-04-22 18:16:38 -0700
+Processing by ActiveAdmin::Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6VNXOgTH2tAFDa88wEg7ZPUb9bitivNPBE5iBuIb+dPotQr/4czYQqzp/ghccsUQP6FaTeIwjcvsX5ZRXxX7lA=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 17ms (ActiveRecord: 1.0ms | Allocations: 3010)
+
+
+Started GET "/admin" for ::1 at 2020-04-22 18:16:38 -0700
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 1200)
+
+
+Started GET "/admin/login" for ::1 at 2020-04-22 18:16:38 -0700
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/shared/_links.erb (Duration: 1.8ms | Allocations: 624)
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 71.8ms | Allocations: 17547)
+Completed 200 OK in 114ms (Views: 106.3ms | ActiveRecord: 0.0ms | Allocations: 38335)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055da5a942840>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055da5a942840>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (3.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+  [1m[35m (5025.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "almacend"[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x0000558454b7eb60>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x0000558454b7eb60>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (7.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+  [1m[35m (120.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "almacend"[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x0000556244819380>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x0000556244819380>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[36mClient Load (1.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY razon ASC[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x0000559e48ac6bd8>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x0000559e48ac6bd8>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[35m (37.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (23.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8385100016631917250)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateClients (20161127190912)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "clients" ("id" serial NOT NULL PRIMARY KEY, "ruc" character varying, "razon" text, "direccion" text, "obs" text, "tipo" integer DEFAULT 1, "origen" integer DEFAULT 1, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161127190912"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20161129155422)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial NOT NULL PRIMARY KEY, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "name" character varying, "permission_level" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161129155422"]]
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToClient (20161130234722)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "clients" ADD "user_id" integer[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_clients_on_user_id" ON "clients"  ("user_id")[0m
+  [1m[35m (3.8ms)[0m  [1m[35mALTER TABLE "clients" ADD CONSTRAINT "fk_rails_21c421fd41"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161130234722"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateItems (20161219182454)
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE TABLE "items" ("id" serial NOT NULL PRIMARY KEY, "pfecha" date, "serie" character varying, "nfactu" character varying, "client_id" integer, "subtotal" float, "origen" integer, "mmes" date, "moneda" integer, "tc" float, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_bfc3e85c77"
+FOREIGN KEY ("client_id")
+  REFERENCES "clients" ("id")
+, CONSTRAINT "fk_rails_d4b6334db2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_items_on_client_id" ON "items"  ("client_id")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_items_on_user_id" ON "items"  ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161219182454"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUsers (20161225155227)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT FALSE[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161225155227"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddEmpresaToItems (20170101192457)
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "items" ADD "empresa" integer[0m
+  [1m[36mprimary::SchemaMigration Create (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170101192457"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeDefaultTc (20170109172054)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "items" ALTER COLUMN "tc" SET DEFAULT 0.0[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "items" ALTER COLUMN "moneda" SET DEFAULT 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170109172054"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeDefaultClientId (20170109174852)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "items" ALTER COLUMN "client_id" SET DEFAULT 881[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170109174852"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDetails (20170113223936)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "details" ("id" serial NOT NULL PRIMARY KEY, "descripcion" text, "cantidad" float, "precio" float, "monto" float, "item_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e2c1c0fe64"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+, CONSTRAINT "fk_rails_70e26b5abc"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE  INDEX  "index_details_on_item_id" ON "details"  ("item_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_details_on_user_id" ON "details"  ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170113223936"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateParameters (20170123160754)
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "parameters" ("id" serial NOT NULL PRIMARY KEY, "empresa" integer, "origen" integer, "mes" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170123160754"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProducts (20170123225344)
+  [1m[35m (9.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE "products" ("id" serial NOT NULL PRIMARY KEY, "nombre" character varying, "descripcion" character varying, "precio" float, "moneda" integer, "unidad" integer, "client_id" integer, "material" character varying, "lote" float, "proceso" integer, "equivalente" integer, "conversion" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_f312597213"
+FOREIGN KEY ("client_id")
+  REFERENCES "clients" ("id")
+)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE  INDEX  "index_products_on_client_id" ON "products"  ("client_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170123225344"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPesoToProducts (20170123235944)
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "products" ADD "peso" float[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "products" ADD "activo" boolean DEFAULT TRUE[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170123235944"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddProductIdToDetails (20170124160432)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "details" ADD "product_id" integer[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_details_on_product_id" ON "details"  ("product_id")[0m
+  [1m[35m (4.2ms)[0m  [1m[35mALTER TABLE "details" ADD CONSTRAINT "fk_rails_77aa393cf6"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170124160432"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFormulas (20170124225512)
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "formulas" ("id" serial NOT NULL PRIMARY KEY, "product_id" integer, "material" integer, "cantidad" float, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_340d74e02b"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+, CONSTRAINT "fk_rails_c0277a6e08"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE  INDEX  "index_formulas_on_product_id" ON "formulas"  ("product_id")[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE  INDEX  "index_formulas_on_user_id" ON "formulas"  ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170124225512"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToProduct (20170125160204)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "products" ADD "user_id" integer[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_products_on_user_id" ON "products"  ("user_id")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_dee2631783"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mprimary::SchemaMigration Create (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170125160204"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20170204213218)
+  [1m[35m (5.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_id" character varying NOT NULL, "resource_type" character varying NOT NULL, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170204213218"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDescripcionToFormulas (20170228210914)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "formulas" ADD "descripcion" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "formulas" ADD "indicacion" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170228210914"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddOrdenToFormulas (20170228223646)
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "formulas" ADD "orden" integer[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170228223646"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSeleToItems (20191013180724)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "items" ADD "sele" integer[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "items" ADD "sele1" integer[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "items" ADD "sele2" character varying[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "items" ADD "sele3" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191013180724"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSeleToParameters (20191013215511)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "parameters" ADD "sele" integer[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "parameters" ADD "sele1" integer[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "parameters" ADD "sele2" character varying[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "parameters" ADD "sele3" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191013215511"]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-23 01:26:03.938058"], ["updated_at", "2020-04-23 01:26:03.938058"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(8385100016631917250)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055d937246998>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055d937246998>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-04-23 07:18:18 -0700
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 18ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Started GET "/admin/login" for ::1 at 2020-04-23 07:18:18 -0700
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/shared/_links.erb (Duration: 3.0ms | Allocations: 626)
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 87.5ms | Allocations: 17815)
+Completed 200 OK in 689ms (Views: 591.4ms | ActiveRecord: 19.4ms | Allocations: 104796)
+
+
+Started POST "/admin/login" for ::1 at 2020-04-23 07:18:22 -0700
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7CaZKMPxvXwEh+y/tyAv9QWaj333E7YqOHCcLX3YL1MmmH7fR2YxWF/si+X3Mq2QlK1W3pi0AW71ovJSEhimZw==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jaduran0102@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 28ms (ActiveRecord: 6.0ms | Allocations: 2595)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7CaZKMPxvXwEh+y/tyAv9QWaj333E7YqOHCcLX3YL1MmmH7fR2YxWF/si+X3Mq2QlK1W3pi0AW71ovJSEhimZw==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/shared/_links.erb (Duration: 6.0ms | Allocations: 100)
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 88.9ms | Allocations: 13310)
+Completed 200 OK in 891ms (Views: 243.2ms | ActiveRecord: 0.0ms | Allocations: 32468)
+
+
+Started POST "/admin/login" for ::1 at 2020-04-23 07:18:25 -0700
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0dMFOf1jwvdq+k2wR5F8YQo8Uugg9mBYbC7bU3ImZiwbbeLOefRO0zGRKuoHg/4EmwuLS09R1xyh/LUsHebvGA==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jaduran0102@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 20ms (ActiveRecord: 1.3ms | Allocations: 1631)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0dMFOf1jwvdq+k2wR5F8YQo8Uugg9mBYbC7bU3ImZiwbbeLOefRO0zGRKuoHg/4EmwuLS09R1xyh/LUsHebvGA==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/shared/_links.erb (Duration: 0.8ms | Allocations: 97)
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 91.4ms | Allocations: 12685)
+Completed 200 OK in 672ms (Views: 211.3ms | ActiveRecord: 0.0ms | Allocations: 30817)
+
+
+Started POST "/admin/login" for ::1 at 2020-04-23 07:18:29 -0700
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oohuhspNTiCGMvAfJI7TSTH+cSk5MmlqihTA0WtSkORoNolxTtrCBN1Zl0VknFEsoMmoilaV3i5Hxq6uBJIZ0A==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jaduran0102@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 22ms (ActiveRecord: 7.5ms | Allocations: 1617)
+
+
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oohuhspNTiCGMvAfJI7TSTH+cSk5MmlqihTA0WtSkORoNolxTtrCBN1Zl0VknFEsoMmoilaV3i5Hxq6uBJIZ0A==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/shared/_links.erb (Duration: 0.4ms | Allocations: 97)
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 80.6ms | Allocations: 12679)
+Completed 200 OK in 517ms (Views: 158.6ms | ActiveRecord: 0.0ms | Allocations: 30814)
+
+
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x00005591665d73a0>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x00005591665d73a0>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055832bf14ad8>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055832bf14ad8>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+  [1m[35m (34.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (21.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8385100016631917250)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateClients (20161127190912)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "clients" ("id" serial NOT NULL PRIMARY KEY, "ruc" character varying, "razon" text, "direccion" text, "obs" text, "tipo" integer DEFAULT 1, "origen" integer DEFAULT 1, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (4.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161127190912"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20161129155422)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial NOT NULL PRIMARY KEY, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying, "last_sign_in_ip" character varying, "name" character varying, "permission_level" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (10.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161129155422"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToClient (20161130234722)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "clients" ADD "user_id" integer[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE  INDEX  "index_clients_on_user_id" ON "clients"  ("user_id")[0m
+  [1m[35m (3.9ms)[0m  [1m[35mALTER TABLE "clients" ADD CONSTRAINT "fk_rails_21c421fd41"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mprimary::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161130234722"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateItems (20161219182454)
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE "items" ("id" serial NOT NULL PRIMARY KEY, "pfecha" date, "serie" character varying, "nfactu" character varying, "client_id" integer, "subtotal" float, "origen" integer, "mmes" date, "moneda" integer, "tc" float, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_bfc3e85c77"
+FOREIGN KEY ("client_id")
+  REFERENCES "clients" ("id")
+, CONSTRAINT "fk_rails_d4b6334db2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE  INDEX  "index_items_on_client_id" ON "items"  ("client_id")[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE  INDEX  "index_items_on_user_id" ON "items"  ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161219182454"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUsers (20161225155227)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT FALSE[0m
+  [1m[36mprimary::SchemaMigration Create (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161225155227"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddEmpresaToItems (20170101192457)
+  [1m[35m (3.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "items" ADD "empresa" integer[0m
+  [1m[36mprimary::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170101192457"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeDefaultTc (20170109172054)
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mALTER TABLE "items" ALTER COLUMN "tc" SET DEFAULT 0.0[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "items" ALTER COLUMN "moneda" SET DEFAULT 1[0m
+  [1m[36mprimary::SchemaMigration Create (4.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170109172054"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeDefaultClientId (20170109174852)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.1ms)[0m  [1m[35mALTER TABLE "items" ALTER COLUMN "client_id" SET DEFAULT 881[0m
+  [1m[36mprimary::SchemaMigration Create (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170109174852"]]
+  [1m[35m (26.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDetails (20170113223936)
+  [1m[35m (4.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.2ms)[0m  [1m[35mCREATE TABLE "details" ("id" serial NOT NULL PRIMARY KEY, "descripcion" text, "cantidad" float, "precio" float, "monto" float, "item_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e2c1c0fe64"
+FOREIGN KEY ("item_id")
+  REFERENCES "items" ("id")
+, CONSTRAINT "fk_rails_70e26b5abc"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_details_on_item_id" ON "details"  ("item_id")[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE  INDEX  "index_details_on_user_id" ON "details"  ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170113223936"]]
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateParameters (20170123160754)
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "parameters" ("id" serial NOT NULL PRIMARY KEY, "empresa" integer, "origen" integer, "mes" date, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170123160754"]]
+  [1m[35m (15.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProducts (20170123225344)
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" serial NOT NULL PRIMARY KEY, "nombre" character varying, "descripcion" character varying, "precio" float, "moneda" integer, "unidad" integer, "client_id" integer, "material" character varying, "lote" float, "proceso" integer, "equivalente" integer, "conversion" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_f312597213"
+FOREIGN KEY ("client_id")
+  REFERENCES "clients" ("id")
+)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE  INDEX  "index_products_on_client_id" ON "products"  ("client_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170123225344"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPesoToProducts (20170123235944)
+  [1m[35m (3.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "products" ADD "peso" float[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "products" ADD "activo" boolean DEFAULT TRUE[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170123235944"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddProductIdToDetails (20170124160432)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "details" ADD "product_id" integer[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_details_on_product_id" ON "details"  ("product_id")[0m
+  [1m[35m (7.9ms)[0m  [1m[35mALTER TABLE "details" ADD CONSTRAINT "fk_rails_77aa393cf6"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+[0m
+  [1m[36mprimary::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170124160432"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFormulas (20170124225512)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "formulas" ("id" serial NOT NULL PRIMARY KEY, "product_id" integer, "material" integer, "cantidad" float, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_340d74e02b"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+, CONSTRAINT "fk_rails_c0277a6e08"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_formulas_on_product_id" ON "formulas"  ("product_id")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_formulas_on_user_id" ON "formulas"  ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170124225512"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToProduct (20170125160204)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "products" ADD "user_id" integer[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_products_on_user_id" ON "products"  ("user_id")[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_dee2631783"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mprimary::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170125160204"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20170204213218)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_id" character varying NOT NULL, "resource_type" character varying NOT NULL, "author_type" character varying, "author_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170204213218"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDescripcionToFormulas (20170228210914)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "formulas" ADD "descripcion" character varying[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "formulas" ADD "indicacion" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (3.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170228210914"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddOrdenToFormulas (20170228223646)
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mALTER TABLE "formulas" ADD "orden" integer[0m
+  [1m[36mprimary::SchemaMigration Create (9.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170228223646"]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSeleToItems (20191013180724)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "items" ADD "sele" integer[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "items" ADD "sele1" integer[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "items" ADD "sele2" character varying[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "items" ADD "sele3" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (4.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191013180724"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSeleToParameters (20191013215511)
+  [1m[35m (6.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.1ms)[0m  [1m[35mALTER TABLE "parameters" ADD "sele" integer[0m
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "parameters" ADD "sele1" integer[0m
+  [1m[35m (6.4ms)[0m  [1m[35mALTER TABLE "parameters" ADD "sele2" character varying[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "parameters" ADD "sele3" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (7.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191013215511"]]
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-24 00:51:05.631435"], ["updated_at", "2020-04-24 00:51:05.631435"]]
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(8385100016631917250)[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Single arity template handlers are deprecated. Template handlers must
+now accept two parameters, the view object and the source for the view object.
+Change:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055bebfcc7a80>.call(template)
+To:
+  >> #<ActionView::Template::Handlers::AxlsxBuilder:0x000055bebfcc7a80>.call(template, source)
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+`config.autoloader` is set to `classic`. These autoloaded constants would have been unloaded if `config.autoloader` had been set to `:zeitwerk`.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <top (required)> at /home/andres/desktop/almacen2/config/environment.rb:5)
+Started GET "/" for ::1 at 2020-04-23 18:08:44 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 27ms (ActiveRecord: 0.0ms | Allocations: 397)
+
+
+Started GET "/admin/login" for ::1 at 2020-04-23 18:08:45 -0700
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/shared/_links.erb (Duration: 1.4ms | Allocations: 626)
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 74.4ms | Allocations: 17813)
+Completed 200 OK in 438ms (Views: 369.7ms | ActiveRecord: 12.8ms | Allocations: 102817)
+
+
+Started POST "/admin/login" for ::1 at 2020-04-23 18:08:50 -0700
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CARetvkTCmKWR2RvYC12zkGJwbq0YyPdO+WExahwOPbLF6K8PXTS6+7VC47Bg/r3Ju8ET5kRlzAx8X99ychSCA==", "user"=>{"email"=>"jaduran0102@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (10.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jaduran0102@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", "2020-04-24 01:08:50.628035"], ["last_sign_in_at", "2020-04-06 18:40:22.278401"], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "177.91.253.30"], ["sign_in_count", 161], ["updated_at", "2020-04-24 01:08:50.628667"], ["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 235ms (ActiveRecord: 15.8ms | Allocations: 8288)
+
+
+Started GET "/" for ::1 at 2020-04-23 18:08:50 -0700
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/page/index.html.arb
+  [1m[36mParameter Load (3.5ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (3.6ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 2], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/page/index.html.arb (Duration: 173.6ms | Allocations: 39290)
+Completed 200 OK in 198ms (Views: 162.8ms | ActiveRecord: 25.0ms | Allocations: 42137)
+
+
+Started GET "/admin/items" for ::1 at 2020-04-23 18:09:07 -0700
+Processing by Admin::ItemsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParameter Load (0.3ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE Parameter Load (0.5ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 AND "items"."client_id" = $4[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["client_id", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 AND "items"."client_id" != $4[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["client_id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 LIMIT $4 OFFSET $5) subquery_for_count[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 LIMIT $4 OFFSET $5) subquery_for_count[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 LIMIT $4 OFFSET $5) subquery_for_count[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mItem Load (1.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 ORDER BY "items"."id" desc, pfecha ASC, serie, nfactu LIMIT $4 OFFSET $5[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mClient Load (5.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1082], ["LIMIT", 1]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1081], ["LIMIT", 1]]
+  [1m[36mClient Load (1.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1103], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.7ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb (Duration: 262.6ms | Allocations: 69526)
+Completed 200 OK in 292ms (Views: 254.1ms | ActiveRecord: 23.3ms | Allocations: 73705)
+
+
+Started GET "/admin/clients" for ::1 at 2020-04-23 18:09:09 -0700
+Processing by Admin::ClientsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (tipo = 2)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (tipo = 1)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (origen = 1)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE (origen = 2)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "clients" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mClient Load (1.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" ORDER BY "clients"."id" desc, razon ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mFormula Load (0.7ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.2ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (1.6ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 13], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.5ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.1ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 12], ["orden", 1], ["LIMIT", 1]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb (Duration: 282.8ms | Allocations: 109142)
+Completed 200 OK in 288ms (Views: 274.0ms | ActiveRecord: 11.1ms | Allocations: 112082)
+
+
+Started GET "/admin/parameters" for ::1 at 2020-04-23 18:09:12 -0700
+Processing by Admin::ParametersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "parameters" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "parameters" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "parameters"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "parameters" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mParameter Load (0.5ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" ORDER BY "parameters"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mFormula Load (0.6ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.5ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 11], ["orden", 1], ["LIMIT", 1]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb (Duration: 47.8ms | Allocations: 29578)
+Completed 200 OK in 54ms (Views: 46.9ms | ActiveRecord: 3.7ms | Allocations: 32465)
+
+
+Started GET "/admin/products" for ::1 at 2020-04-23 18:09:14 -0700
+Processing by Admin::ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (proceso <> 3)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (proceso = 3)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "products" WHERE (proceso <> 3) LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "products" WHERE (proceso <> 3) LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE (proceso <> 3)[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "products" WHERE (proceso <> 3) LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (proceso <> 3) ORDER BY "products"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mFormula Load (1.5ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Formula Load (0.0ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 7], ["orden", 1], ["LIMIT", 1]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb (Duration: 118.7ms | Allocations: 57995)
+Completed 200 OK in 139ms (Views: 112.9ms | ActiveRecord: 13.3ms | Allocations: 61846)
+
+
+Started GET "/admin/users" for ::1 at 2020-04-23 18:09:15 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb (Duration: 181.3ms | Allocations: 41721)
+Completed 200 OK in 195ms (Views: 183.3ms | ActiveRecord: 4.2ms | Allocations: 44606)
+
+
+Started GET "/admin/items" for ::1 at 2020-04-23 18:09:16 -0700
+Processing by Admin::ItemsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mParameter Load (0.7ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 AND "items"."client_id" = $4[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["client_id", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 AND "items"."client_id" != $4[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["client_id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 LIMIT $4 OFFSET $5) subquery_for_count[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 LIMIT $4 OFFSET $5) subquery_for_count[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 LIMIT $4 OFFSET $5) subquery_for_count[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3 ORDER BY "items"."id" desc, pfecha ASC, serie, nfactu LIMIT $4 OFFSET $5[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1082], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1081], ["LIMIT", 1]]
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = $1 LIMIT $2[0m  [["id", 1103], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.2ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFormula Load (0.5ms)[0m  [1m[34mSELECT descripcion as dd FROM "formulas" WHERE "formulas"."product_id" = $1 AND "formulas"."orden" = $2 ORDER BY "formulas"."id" ASC LIMIT $3[0m  [["product_id", 10], ["orden", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Parameter Load (0.0ms)[0m  [1m[34mSELECT "parameters".* FROM "parameters" WHERE "parameters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT SUM("items"."subtotal") FROM "items" WHERE "items"."origen" = $1 AND "items"."mmes" = $2 AND "items"."empresa" = $3[0m  [["origen", 1], ["mmes", "2020-02-01"], ["empresa", 7]]
+  Rendered /home/andres/.rvm/gems/ruby-2.5.1/bundler/gems/activeadmin-9354135234d1/app/views/active_admin/resource/index.html.arb (Duration: 146.3ms | Allocations: 44484)
+Completed 200 OK in 166ms (Views: 139.5ms | ActiveRecord: 11.8ms | Allocations: 46951)
+
+
