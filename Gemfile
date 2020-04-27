@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 
 
 gem 'devise'
+gem 'cancancan'
 
 
 gem 'wicked_pdf', '~> 1.1'
@@ -48,6 +49,7 @@ gem 'rubyzip', '= 1.0.0'
 gem 'axlsx', '= 2.0.1'
 gem 'axlsx_rails'
 
+gem "active_admin_import" 
 
 
 

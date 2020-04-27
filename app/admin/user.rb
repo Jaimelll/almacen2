@@ -2,29 +2,34 @@ ActiveAdmin.register User do
 
 
 
-  menu if: proc{ current_user.id==1 }, priority: 13,label: "Usuarios"
-  permit_params :email, :password, :password_confirmation
+  menu if: proc{ current_user.categoria==1 }, priority: 13,label: "Usuarios"
+  permit_params :email, :password, :password_confirmation, :categoria, :empresa, :periodo
 
   index do
     selectable_column
     id_column
     column :email
+    column :categoria
+    column :empresa
+  
     column :current_sign_in_at
     column :sign_in_count
-    column :created_at
+   
     actions
   end
 
   filter :email
-  filter :current_sign_in_at
-  filter :sign_in_count
-  filter :created_at
+  filter :categoria
+  filter :empresa
+ 
 
   form do |f|
     f.inputs "Admin Details" do
       f.input :email
       f.input :password
       f.input :password_confirmation
+      f.input :categoria
+      f.input :empresa
     end
     f.actions
   end
