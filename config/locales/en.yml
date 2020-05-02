@@ -109,6 +109,7 @@ en:
     has_many_delete: Eliminar
     has_many_new: "Añadir"
     has_many_remove: Quitar
+    import: Importar
     index_list: 
       activerecord: ~
       block: Lista

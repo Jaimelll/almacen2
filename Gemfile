@@ -45,11 +45,10 @@ gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 
 
 
-gem 'rubyzip', '= 1.0.0'
-gem 'axlsx', '= 2.0.1'
-gem 'axlsx_rails'
+gem 'caxlsx'
+gem 'caxlsx_rails'
+gem 'active_admin_import', '~> 3.0'
 
-gem "active_admin_import" 
 
 
 
