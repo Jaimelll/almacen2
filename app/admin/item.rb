@@ -229,7 +229,7 @@ show :title => ' Comprobante'  do
 
         li   link_to "Registros Excel",reports_vhoja1_path(format:  "xlsx", :param1=> 1)
         li
-        li   link_to "actualiza nuevo",reports_vhoja1_path(format:  "xlsx", :param1=> 4)
+      ##  li   link_to "actualiza nuevo",reports_vhoja1_path(format:  "xlsx", :param1=> 4)
         li
         li   link_to "genera comprobante",reports_vhoja1_path(format:  "xlsx", :param1=> 5)
         
