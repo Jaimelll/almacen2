@@ -1,5 +1,30 @@
 class ItemsController < ApplicationController
 
+  def jalar(vadni,vpara)
+    if vadni.length==8 then
+      require 'json'
+      require 'open-uri'
+       vruta='https://ww1.essalud.gob.pe/sisep/postulante/postulante/postulante_obtenerDatosPostulante.htm?strDni='+vadni
+    
+  
+      value0 = JSON.parse(open(vruta).read)
+      value1 =value0['DatosPerson'][0]
+      if value1 then
+       Item.where(id:vpara).update_all( razon2:value1["ApellidoPaterno"])
+      end
+      puts " "       
+      puts "COMIENZA"
+      puts value1["ApellidoPaterno"].length   
+      puts "TERMINA"
+    end       
+  end#def jalar
+  
+
+
+
+
+
+
     def centr_nomb(idclient)
         vrazon='sin razon '
         vruc='sin ruc '

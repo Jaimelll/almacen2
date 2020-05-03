@@ -9,8 +9,6 @@ ActiveAdmin.register Client do
                 :obs, :tipo, :origen, :user_id
 
 
-                active_admin_import 
-
 
 
 

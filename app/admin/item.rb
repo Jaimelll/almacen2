@@ -7,7 +7,7 @@ ActiveAdmin.register Detail do
 belongs_to :item
 end
 
-
+active_admin_import 
 
 
 action_item :view, only: :show do
@@ -62,16 +62,18 @@ filter :nfactu, label:'Factura'
 index :title => "Comprobante" do
  
   column("Codigo", :sortable => :sele) {|selen|  selen.sele }
-  column("Fecha", :pfecha)
+  column("Fecha", :pfecha) do |item|
+      item.pfecha.strftime("%d-%m-%Y")
+  end    
   column("serie")
   column("Numero", :nfactu)
-  column("RUC", :client_id) do |item|
-   item.client.ruc if item.client
-  end
   column("Centro", :client_id) do |item|
-    item.client.razon.capitalize if item.client
+   item.client.ruc+"-"+item.client.razon.capitalize if item.client
   end
-    column("subtotal") do |item|
+  column("ruc")
+  column("razon")
+  column("razon2")
+  column("subtotal") do |item|
     div :class => 'sub' do
       '%.2f' %(item.subtotal) if item.subtotal
         end
@@ -105,6 +107,8 @@ form :title => 'Edicion Comprobante'  do |f|
        f.input :client_id, :label => 'Centro', :as => :select, :collection =>
                Client.all.order('ruc ASC').map{|u| ["#{u.ruc}-RUC-#{u.razon.capitalize}",
                u.id]}, :input_html => { :style =>  'width:50%'}
+       f.input :ruc, :input_html => { :rows => 2,:style =>  'width:30%'} 
+       f.input :razon, :input_html => { :rows => 2,:style =>  'width:30%'}        
        f.input :moneda, :label => 'Moneda', :as => :select, :collection =>
                Formula.where(product_id:8).map{|u| [u.descripcion, u.orden]}
        f.input :tc,:as =>:string, :input_html => { :rows => 2,:style =>  'width:30%'}
@@ -158,6 +162,8 @@ show :title => ' Comprobante'  do
             row :Centro do |item|
               item.client.razon.capitalize if item.client
             end
+            row :ruc
+            row :razon
             row :subtotal do |item|
                 if  Detail.where(item_id:item.id).count>0 then
                   Detail.where(item_id:item.id).where('monto>0 and cantidad>0').each do |detal|
@@ -221,7 +227,11 @@ show :title => ' Comprobante'  do
         li  strong { "IGV :"+ '%.2f' %(suss*0.18)} 
         li  strong { "TOTAL :"+ '%.2f' %(suss*1.18)} 
 
-        link_to "Registros Excel",reports_vhoja1_path(format:  "xlsx", :param1=> 1)
+        li   link_to "Registros Excel",reports_vhoja1_path(format:  "xlsx", :param1=> 1)
+        li
+        li   link_to "actualiza nuevo",reports_vhoja1_path(format:  "xlsx", :param1=> 4)
+        li
+        li   link_to "genera comprobante",reports_vhoja1_path(format:  "xlsx", :param1=> 5)
         
        end# de sider
        

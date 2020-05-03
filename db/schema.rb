@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_26_155620) do
+ActiveRecord::Schema.define(version: 2020_05_03_170177) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2020_04_26_155620) do
     t.date "mmes"
     t.integer "moneda", default: 1
     t.float "tc", default: 0.0
-    t.integer "user_id"
+    t.integer "user_id", default: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "empresa"
@@ -89,6 +89,11 @@ ActiveRecord::Schema.define(version: 2020_04_26_155620) do
     t.integer "sele1"
     t.string "sele2"
     t.string "sele3"
+    t.string "ruc"
+    t.string "razon"
+    t.string "detalle"
+    t.string "razon2"
+    t.integer "nuevo", default: 1
     t.index ["client_id"], name: "index_items_on_client_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end

@@ -235,6 +235,54 @@ wb.add_worksheet(name: "doc x  empresa") do |sheet|
             Item.where(empresa:2).destroy_all
         sheet.add_row ["termino"]
         end
+    when 4
+      wb.add_worksheet(name:"borranuevo1") do |sheet|
+       sheet.add_row ["empieza"]
+
+       Item.where(nuevo:1).update_all( nuevo:0 )
+       sheet.add_row ["termino"]
+      end
+    when 5
+
+      compro = ItemsController.new
+     
+
+      wb.add_worksheet(name:"Actualiza comprobante") do |sheet|
+       sheet.add_row ["empieza"]
+
+       Item.where(nuevo:1).update_all( origen:Parameter.find_by_id(1).origen, 
+                                       mmes:Parameter.find_by_id(1).mes,
+                                       empresa:Parameter.find_by_id(1).empresa)
+
+
+      
+      Item.where(nuevo:1).each do |ittem| 
+
+       object = Detail.new(:descripcion => ittem.detalle,
+                           :cantidad=> 1,
+                           :item_id => ittem.id,
+                           :precio => ittem.subtotal/0.18,
+                           :monto =>ittem.subtotal,
+                           :user_id => 3)
+
+      
+       
+       object.save
+       
+       compro.jalar( ittem.ruc,ittem.id)
+
+      end
+
+
+       Item.where(nuevo:1).update_all( nuevo:0)                                
+       sheet.add_row ["termino"]
+      end
+
+   
+
+
+
+
 
 
  end  ##case
