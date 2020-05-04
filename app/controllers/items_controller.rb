@@ -9,8 +9,25 @@ class ItemsController < ApplicationController
   
       value0 = JSON.parse(open(vruta).read)
       value1 =value0['DatosPerson'][0]
+
       if value1 then
        Item.where(id:vpara).update_all( razon2:value1["ApellidoPaterno"])
+
+       if Client.where(ruc:vadni).count==0  then
+         
+        object = Client.new(:ruc => vadni,
+                            :razon=> value1["ApellidoPaterno"],
+                            :direccion => value1["ApellidoPaterno"],
+                            :user_id => 3)
+
+
+          object.save
+
+        end
+        vidclient=Client.where(ruc:vadni).select('id as dd').first.dd
+        Item.where(id:vpara).update_all(client_id:vidclient)
+
+
       end
       puts " "       
       puts "COMIENZA"
