@@ -1,38 +1,42 @@
 class ItemsController < ApplicationController
 
-  def jalar(vadni,vpara)
-    if vadni.length==8 then
+  def jalar(vruc,vpara)
+    if vruc.length==11 then
       require 'json'
       require 'open-uri'
-       vruta='https://ww1.essalud.gob.pe/sisep/postulante/postulante/postulante_obtenerDatosPostulante.htm?strDni='+vadni
-    
-  
+     # vruta='https://ww1.essalud.gob.pe/sisep/postulante/postulante/postulante_obtenerDatosPostulante.htm?strDni='+vadni
+     vruta='https://api.sunat.cloud/ruc/'+vruc
+      
+      value0= nil   
+      begin 
       value0 = JSON.parse(open(vruta).read)
-      value1 =value0['DatosPerson'][0]
-
+      rescue JSON::ParserError
+        false
+        Item.where(id:vpara).update_all( razon2:"no encuentra ruc",client_id:881)
+      end
+      value1 =value0
+      puts value1
       if value1 then
-       Item.where(id:vpara).update_all( razon2:value1["ApellidoPaterno"])
+       Item.where(id:vpara).update_all( razon2:value1["razon_social"])
 
-       if Client.where(ruc:vadni).count==0  then
+       if Client.where(ruc:vruc).count==0  then
          
-        object = Client.new(:ruc => vadni,
-                            :razon=> value1["ApellidoPaterno"],
-                            :direccion => value1["ApellidoPaterno"],
+        object = Client.new(:ruc => vruc,
+                            :razon=> value1["razon_social"],
+                            :direccion => value1["domicilio_fiscal"],
                             :user_id => 3)
 
 
           object.save
 
         end
-        vidclient=Client.where(ruc:vadni).select('id as dd').first.dd
+        vidclient=Client.where(ruc:vruc).select('id as dd').first.dd
         Item.where(id:vpara).update_all(client_id:vidclient)
 
 
       end
-      puts " "       
-      puts "COMIENZA"
-      puts value1["ApellidoPaterno"].length   
-      puts "TERMINA"
+    else
+      Item.where(id:vpara).update_all( razon2:"no encuentra ruc",client_id:881)
     end       
   end#def jalar
   

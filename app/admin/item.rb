@@ -33,6 +33,7 @@ end
 permit_params :pfecha, :serie,:nfactu, :client_id,:subtotal,
               :origen, :mmes, :moneda, :tc, :user_id,
               :created_at, :updated_at, :empresa, :sele, :sele1, :sele2, :sele3,
+              :ruc, :razon, :razon2, :detalle,
               details_attributes: [:id, :descripcion, :cantidad, :precio, :monto, :item_id,
                 :user_id, :product_id, :_destroy]    
                 
@@ -142,6 +143,10 @@ form :title => 'Edicion Comprobante'  do |f|
 
 
 show :title => ' Comprobante'  do
+           compro = ItemsController.new
+           compro.jalar( Item.find_by_id(params[:id]).ruc,params[:id])
+          
+
            attributes_table do
            reporte = ItemsController.new   
            reporte.nota_credito(params[:id])
@@ -164,6 +169,7 @@ show :title => ' Comprobante'  do
             end
             row :ruc
             row :razon
+            row :razon2
             row :subtotal do |item|
                 if  Detail.where(item_id:item.id).count>0 then
                   Detail.where(item_id:item.id).where('monto>0 and cantidad>0').each do |detal|
