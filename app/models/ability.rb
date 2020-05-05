@@ -13,7 +13,7 @@ class Ability
       case user.categoria # a_variable is the variable we want to compare
          when 1
               can :manage, :all
-              can :import, Client
+            
          else
             can :read, ActiveAdmin::Page, :name =>"Dashboard"    
        end      

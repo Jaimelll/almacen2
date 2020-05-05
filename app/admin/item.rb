@@ -8,7 +8,7 @@ belongs_to :item
 end
 
 active_admin_import 
-
+compro = ItemsController.new
 
 action_item :view, only: :show do
   link_to 'Crear nuevo parte', new_admin_item_path()
@@ -60,8 +60,10 @@ filter :nfactu, label:'Factura'
 
 
 
+  
 index :title => "Comprobante" do
- 
+  compro.nuevos
+
   column("Codigo", :sortable => :sele) {|selen|  selen.sele }
   column("Fecha", :pfecha) do |item|
       item.pfecha.strftime("%d-%m-%Y")
@@ -143,13 +145,13 @@ form :title => 'Edicion Comprobante'  do |f|
 
 
 show :title => ' Comprobante'  do
-           compro = ItemsController.new
+          
            compro.jalar( Item.find_by_id(params[:id]).ruc,params[:id])
           
 
            attributes_table do
-           reporte = ItemsController.new   
-           reporte.nota_credito(params[:id])
+          
+           compro.nota_credito(params[:id])
             row "NoParte" do |item|
                item.id
             end 

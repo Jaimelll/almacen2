@@ -41,7 +41,41 @@ class ItemsController < ApplicationController
   end#def jalar
   
 
+  def nuevos
+    compro = ItemsController.new
+     
 
+    
+
+     Item.where(nuevo:1).update_all( origen:Parameter.find_by_id(1).origen, 
+                                     mmes:Parameter.find_by_id(1).mes,
+                                     empresa:Parameter.find_by_id(1).empresa)
+
+
+    
+    Item.where(nuevo:1).each do |ittem| 
+
+     object = Detail.new(:descripcion => ittem.detalle,
+                         :cantidad=> 1,
+                         :item_id => ittem.id,
+                         :precio => ittem.subtotal/1.18,
+                         :monto =>ittem.subtotal,
+                         :user_id => 3)
+
+    
+     
+     object.save
+     
+     compro.jalar( ittem.ruc,ittem.id)
+     
+    end
+
+     
+     Item.where(nuevo:1).update_all( nuevo:0)                                
+  
+
+
+  end
 
 
 
