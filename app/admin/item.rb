@@ -6,9 +6,12 @@ ActiveAdmin.register Item do
 ActiveAdmin.register Detail do
 belongs_to :item
 end
-
-active_admin_import 
 compro = ItemsController.new
+active_admin_import csv_options: {col_sep: ";" },
+              after_import: proc{compro.nuevos}
+
+
+
 
 action_item :view, only: :show do
   link_to 'Crear nuevo parte', new_admin_item_path()
