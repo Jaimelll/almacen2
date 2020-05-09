@@ -64,7 +64,7 @@ normal = style.add_style( alignment: { horizontal: :center,vertical: :center }, 
 
 
 def merge_last_row(sheet,options ={})
-  last_row = sheet.rows.last.index + 1
+  last_row = sheet.rows.last.row_index  + 1
   first_col,last_col = options[:columns]
   if first_col && last_col
     sheet.merge_cells "#{first_col}#{last_row}:#{last_col}#{last_row}"
@@ -91,6 +91,7 @@ wb.add_worksheet(name: "VENTAS") do |sheet|
     sheet.add_row [nil,nil,"REGISTRO DE VENTAS ",nil], 
       style: [nil,nil,normal,normal], height: 40
     merge_last_row sheet, columns:["C","D"]
+
     sheet.add_row []
 
 vraz=Formula.where(product_id:10).where(orden:Parameter.find_by_id(1).empresa).
