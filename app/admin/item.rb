@@ -79,6 +79,7 @@ index :title => "Comprobante" do
   column("ruc")
   column("razon")
   column("razon2")
+  column("monto")
   column("subtotal") do |item|
     div :class => 'sub' do
       '%.2f' %(item.subtotal) if item.subtotal
@@ -183,7 +184,7 @@ show :title => ' Comprobante'  do
                 end  
 
                if Detail.where(item_id:item.id).sum(:monto)>0 then
-                  item.update(subtotal:Detail.where(item_id:item.id).sum(:monto))
+                  item.update(subtotal:Detail.where(item_id:item.id).sum(:precio))
                   item.subtotal
               end
             end

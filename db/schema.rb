@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_03_170177) do
+ActiveRecord::Schema.define(version: 2020_05_15_024236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 2020_05_03_170177) do
     t.string "detalle"
     t.string "razon2"
     t.integer "nuevo", default: 1
+    t.float "monto"
     t.index ["client_id"], name: "index_items_on_client_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
@@ -129,12 +130,6 @@ ActiveRecord::Schema.define(version: 2020_05_03_170177) do
     t.integer "user_id"
     t.index ["client_id"], name: "index_products_on_client_id"
     t.index ["user_id"], name: "index_products_on_user_id"
-  end
-
-  create_table "purchases", force: :cascade do |t|
-    t.string "producto"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", id: :serial, force: :cascade do |t|

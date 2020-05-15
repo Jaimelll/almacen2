@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def jalar(vruc,vpara)
-    if vruc.length==11 then
+    if vruc and vruc.length==11 then
       require 'json'
       require 'open-uri'
      # vruta='https://ww1.essalud.gob.pe/sisep/postulante/postulante/postulante_obtenerDatosPostulante.htm?strDni='+vadni
@@ -44,22 +44,22 @@ class ItemsController < ApplicationController
   def nuevos
     compro = ItemsController.new
      
-
+    
     
 
      Item.where(nuevo:1).update_all( origen:Parameter.find_by_id(1).origen, 
                                      mmes:Parameter.find_by_id(1).mes,
                                      empresa:Parameter.find_by_id(1).empresa)
 
-
     
-    Item.where(nuevo:1).each do |ittem| 
+  Item.where(nuevo:1).each do |ittem| 
+    Item.where(id:ittem.id).update_all(subtotal:ittem.monto/1.18)
 
      object = Detail.new(:descripcion => ittem.detalle,
                          :cantidad=> 1,
                          :item_id => ittem.id,
-                         :precio => ittem.subtotal/1.18,
-                         :monto =>ittem.subtotal,
+                         :precio => ittem.monto/1.18,
+                         :monto =>ittem.monto,
                          :user_id => 3)
 
     
