@@ -149,9 +149,10 @@ form :title => 'Edicion Comprobante'  do |f|
 
 
 show :title => ' Comprobante'  do
-          
+           
+          if Item.find_by_id(params[:id]).ruc then
            compro.jalar( Item.find_by_id(params[:id]).ruc,params[:id])
-          
+          end
 
            attributes_table do
           
@@ -184,7 +185,8 @@ show :title => ' Comprobante'  do
                 end  
 
                if Detail.where(item_id:item.id).sum(:monto)>0 then
-                  item.update(subtotal:Detail.where(item_id:item.id).sum(:precio))
+                  item.update(subtotal:Detail.where(item_id:item.id).sum(:precio),
+                                monto:Detail.where(item_id:item.id).sum(:monto)  )
                   item.subtotal
               end
             end
@@ -242,24 +244,24 @@ show :title => ' Comprobante'  do
         li   link_to "Registros Excel",reports_vhoja1_path(format:  "xlsx", :param1=> 1)
         li
       ##  li   link_to "actualiza nuevo",reports_vhoja1_path(format:  "xlsx", :param1=> 4)
-        li
-        li   link_to "genera comprobante",reports_vhoja1_path(format:  "xlsx", :param1=> 5)
+        ##  li
+      ##    li   link_to "genera comprobante",reports_vhoja1_path(format:  "xlsx", :param1=> 5)
         
        end# de sider
        
        sidebar "Datos de Parte" , only: :show do
-        sub=0
+        monto=0
  
         Item.where(id:params[:id]).each do |item|
           
-          sub=sub+item.subtotal
+          monto=monto+item.monto
 
         end #each
             ul do
 
-              li   strong {'Subtotal='+'%.2f' %(sub).to_s}
-              li   strong {'IGV='+'%.2f' %(sub*0.18).to_s}
-              li  strong {'TOTAL='+'%.2f' %(sub*1.18).to_s}
+              li   strong {'Subtotal='+'%.2f' %(monto/1.18).to_s}
+              li   strong {'IGV='+'%.2f' %(monto*0.18/1.18).to_s}
+              li  strong {'TOTAL='+'%.2f' %(monto).to_s}
 
 
             end

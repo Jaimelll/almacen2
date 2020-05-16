@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
 
   def jalar(vruc,vpara)
-    if vruc and vruc.length==11 then
+
+    if vruc and vruc.length>0 then
+    if vruc.length==11 then
       require 'json'
       require 'open-uri'
      # vruta='https://ww1.essalud.gob.pe/sisep/postulante/postulante/postulante_obtenerDatosPostulante.htm?strDni='+vadni
@@ -37,7 +39,8 @@ class ItemsController < ApplicationController
       end
     else
       Item.where(id:vpara).update_all( razon2:"no encuentra ruc",client_id:881)
-    end       
+    end    
+   end   
   end#def jalar
   
 
