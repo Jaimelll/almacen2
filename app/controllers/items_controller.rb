@@ -32,9 +32,10 @@ class ItemsController < ApplicationController
           object.save
 
         end
+        if Client.where(ruc:vruc).count>0 then
         vidclient=Client.where(ruc:vruc).select('id as dd').first.dd
         Item.where(id:vpara).update_all(client_id:vidclient)
-
+        end
 
       end
     else
