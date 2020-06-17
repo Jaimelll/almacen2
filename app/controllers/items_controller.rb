@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
 
   def jalar(vruc,vpara)
-
+    # IF -1
     if vruc and vruc.length>0 then
+      # IF 0
     if vruc.length==11 then
       require 'json'
       require 'open-uri'
@@ -18,9 +19,10 @@ class ItemsController < ApplicationController
       end
       value1 =value0
       puts value1
+      # IF 1
       if value1 then
        Item.where(id:vpara).update_all( razon2:value1["razon_social"])
-
+        # IF 2
        if Client.where(ruc:vruc).count==0  then
          
         object = Client.new(:ruc => vruc,
@@ -30,17 +32,20 @@ class ItemsController < ApplicationController
 
 
           object.save
+        else
 
+            vidclient=Client.where(ruc:vruc).select('id as dd').first.dd   
+            Item.where(id:vpara).update_all(client_id:vidclient)
+        #  END 2
         end
-        if Client.where(ruc:vruc).count>0 then
-        vidclient=Client.where(ruc:vruc).select('id as dd').first.dd
-        Item.where(id:vpara).update_all(client_id:vidclient)
-        end
-
+      #  END 1
       end
+      
     else
       Item.where(id:vpara).update_all( razon2:"no encuentra ruc",client_id:881)
-    end    
+      #  END 0
+    end  
+      #  END -1
    end   
   end#def jalar
   
