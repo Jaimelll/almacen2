@@ -62,7 +62,7 @@ class ItemsController < ApplicationController
 
     
   Item.where(nuevo:1).each do |ittem| 
-    Item.where(id:ittem.id).update_all(subtotal:ittem.monto/1.18)
+    Item.where(id:ittem.id).update_all(subtotal:ittem.monto/1.18,nuevo:0)
 
      object = Detail.new(:descripcion => ittem.detalle,
                          :cantidad=> 1,
@@ -77,10 +77,7 @@ class ItemsController < ApplicationController
      
      compro.jalar( ittem.ruc,ittem.id)
      
-    end
-
-     
-     Item.where(nuevo:1).update_all( nuevo:0)                                
+    end                        
   
 
 
