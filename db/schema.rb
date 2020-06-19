@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_024236) do
+ActiveRecord::Schema.define(version: 2020_06_19_013150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,9 +86,9 @@ ActiveRecord::Schema.define(version: 2020_05_15_024236) do
     t.datetime "updated_at", null: false
     t.integer "empresa"
     t.integer "sele"
-    t.integer "sele1"
-    t.string "sele2"
-    t.string "sele3"
+    t.integer "documento"
+    t.string "serie2"
+    t.string "ndocu2"
     t.string "ruc"
     t.string "razon"
     t.string "detalle"

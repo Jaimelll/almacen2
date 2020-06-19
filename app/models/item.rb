@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :details, allow_destroy: true
   #####
 
- validates_uniqueness_of :nfactu, :scope => [:serie, :client_id, :sele1]
+ validates_uniqueness_of :nfactu, :scope => [:serie, :client_id, :documento]
 
 
 

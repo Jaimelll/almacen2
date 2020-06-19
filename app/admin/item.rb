@@ -35,7 +35,7 @@ end
 #### necesario para borrar hijos con el padre agregar _atributes
 permit_params :pfecha, :serie,:nfactu, :client_id,:subtotal,
               :origen, :mmes, :moneda, :tc, :user_id,
-              :created_at, :updated_at, :empresa, :sele, :sele1, :sele2, :sele3,
+              :created_at, :updated_at, :empresa, :sele, :documento, :serie2, :ndocu2,
               :ruc, :razon, :razon2, :detalle,
               details_attributes: [:id, :descripcion, :cantidad, :precio, :monto, :item_id,
                 :user_id, :product_id, :_destroy]    
@@ -107,7 +107,7 @@ form :title => 'Edicion Comprobante'  do |f|
       
        f.input :serie, :input_html => { :rows => 2,:style =>  'width:30%'}
        f.input :nfactu, :label => 'Comprobante', :input_html => { :rows => 2,:style =>  'width:30%'}
-       f.input :sele1, :label => 'Documento', :as => :select, :collection =>
+       f.input :documento, :label => 'Documento', :as => :select, :collection =>
                 Formula.where(product_id:16
                 ).map{|u| [u.descripcion, u.orden]}
                 
@@ -125,6 +125,9 @@ form :title => 'Edicion Comprobante'  do |f|
        f.input :empresa, :input_html => { :value => Parameter.find_by_id(1).empresa }, :as => :hidden
        f.input :user_id, :input_html => { :value => current_user.id }, :as => :hidden
        f.input :subtotal, :input_html => { :value => 0}, :as => :hidden
+
+       f.input :serie2, :input_html => { :rows => 2,:style =>  'width:30%'}
+       f.input :ndocu2, :input_html => { :rows => 2,:style =>  'width:30%'}
 
     end
     f.inputs do
@@ -156,7 +159,7 @@ show :title => ' Comprobante'  do
 
            attributes_table do
           
-           compro.nota_credito(params[:id])
+          
             row "NoParte" do |item|
                item.id
             end 
@@ -166,8 +169,8 @@ show :title => ' Comprobante'  do
               item.nfactu
              end
             row "Documento" do |item|
-              if Formula.where(product_id:16,orden:item.sele1).count>0 then
-              Formula.where(product_id:16,orden:item.sele1).
+              if Formula.where(product_id:16,orden:item.documento).count>0 then
+              Formula.where(product_id:16,orden:item.documento).
                    select('descripcion as dd').first.dd
               end
              end
@@ -196,8 +199,8 @@ show :title => ' Comprobante'  do
                    select('descripcion as dd').first.dd
              end
             row :tc
-
-
+            row :serie2
+            row :ndocu2
           end
           panel "Tabla de Detalles" do
             table_for item.details do
