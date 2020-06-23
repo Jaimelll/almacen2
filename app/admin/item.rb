@@ -187,11 +187,11 @@ show :title => ' Comprobante'  do
                   end  
                 end  
 
-               if Detail.where(item_id:item.id).sum(:monto)>0 then
-                  item.update(subtotal:Detail.where(item_id:item.id).sum(:precio),
+               item.update(subtotal:Detail.where(item_id:item.id).sum(:precio),
                                 monto:Detail.where(item_id:item.id).sum(:monto)  )
-                  item.subtotal
-              end
+                 
+             
+              item.subtotal
             end
            
             row :moneda do |item|

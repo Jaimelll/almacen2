@@ -10,8 +10,7 @@ ActiveAdmin.register Formula do
   
     
   
-  
-        
+   
   
   
   

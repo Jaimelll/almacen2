@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 #root 'welcome#index'
 root 'admin/dashboard#index'
 match 'variables/form', via: [:get]
+match 'variables/form2', via: [:get]
 match 'variables/comment', via: [:get]
 match 'reports/vhoja1', via: [:get]
 

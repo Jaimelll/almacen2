@@ -26,11 +26,15 @@ case Parameter.find_by_id(1).origen
      strong { Formula.where(product_id:10).where(orden:Parameter.find_by_id(1).empresa).
                  select('descripcion as dd').first.dd.capitalize}
      strong { link_to 'generar pdf', variables_form_path(format: :pdf)}
+     br
+     strong { link_to 'generar2 pdf', variables_form2_path(format: :pdf)}
   when 2
     strong { "Registro de Ventas-"}
     strong { Formula.where(product_id:10).where(orden:Parameter.find_by_id(1).empresa).
                    select('descripcion as dd').first.dd.capitalize}
     strong { link_to 'generar pdf', variables_form_path(format: :pdf)}
+    br
+    strong { link_to 'generar2 pdf', variables_form2_path(format: :pdf)}
 end
 
 
