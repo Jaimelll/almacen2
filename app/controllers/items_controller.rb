@@ -10,15 +10,21 @@ class ItemsController < ApplicationController
      # vruta='https://ww1.essalud.gob.pe/sisep/postulante/postulante/postulante_obtenerDatosPostulante.htm?strDni='+vadni
      vruta='https://api.sunat.cloud/ruc/'+vruc
       
-      value0= nil   
-      begin 
-      value0 = JSON.parse(open(vruta).read)
-      rescue JSON::ParserError
-        false
-        Item.where(id:vpara).update_all( razon2:"no encuentra ruc",client_id:881)
+     
+      if  Product.find_by_id(20).precio==1
+        value0= nil  
+          begin 
+
+          value0 = JSON.parse(open(vruta).read)
+          rescue JSON::ParserError
+            false
+            Item.where(id:vpara).update_all( razon2:"no encuentra ruc",client_id:881)
+          end
+          value1 =value0
+          puts value1
+      else
+        value1=false
       end
-      value1 =value0
-      puts value1
       # IF 1
       if value1 then
        Item.where(id:vpara).update_all( razon2:value1["razon_social"])
@@ -32,19 +38,60 @@ class ItemsController < ApplicationController
 
 
           object.save
-        else
+       
 
-            vidclient=Client.where(ruc:vruc).select('id as dd').first.dd   
-            Item.where(id:vpara).update_all(client_id:vidclient)
-        #  END 2
+
         end
+        vidclient=Client.where(ruc:vruc).select('id as dd').first.dd   
+        Item.where(id:vpara).update_all(client_id:vidclient)
+    #  END 2
+
+
+
       #  END 1
       end
       
     else
+
       Item.where(id:vpara).update_all( razon2:"no encuentra ruc",client_id:881)
+   
+
+# sin conexion
+
       #  END 0
     end  
+
+    if  Product.find_by_id(20).precio==0
+
+ 
+      # IF 2
+     if Client.where(ruc:vruc).count==0  then
+       
+      object = Client.new(:ruc => vruc,
+                          :razon=> Item.find_by_id(vpara).razon.upcase,
+                          :direccion => "sin conexion",
+                          :user_id => 3)
+    
+    
+        object.save
+     
+
+      #  END 2
+      end
+      vidclient=Client.where(ruc:vruc).select('id as dd').first.dd   
+      Item.where(id:vpara).update_all(client_id:vidclient)
+    
+      Item.where(id:vpara).update_all( razon2:Item.find_by_id(vpara).razon.upcase)
+    
+    
+    
+    
+    
+    
+      end  # sin conexion
+
+
+
       #  END -1
    end   
   end#def jalar
