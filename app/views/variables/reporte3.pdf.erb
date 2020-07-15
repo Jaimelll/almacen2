@@ -18,7 +18,7 @@
         <h6 class="rep">
           
            <%if Parameter.find_by_id(1).origen==1 %>
-             <% vlinea="|" %>
+             <% vlinea="" %>
              <%Formula.where(product_id:17).order('orden').each do |colu| %>
 
                 <%vlinea=vlinea+produ.funcx(item.id,colu.cantidad) %>       
@@ -26,7 +26,7 @@
              <%end%>
              <%= vlinea%>
             <%else%>
-             <% vlinea="|" %>
+             <% vlinea="" %>
              <%Formula.where(product_id:18).order('orden').each do |colu| %>
 
                 <%vlinea=vlinea+produ.funcx(item.id,colu.cantidad) %>       
