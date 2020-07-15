@@ -183,7 +183,7 @@ class ProductsController < ApplicationController
 #22    
       def nnum(vid)
         if Item.find_by_id(vid).documento==4
-          vnnum="2" 
+          vnnum="01" 
         else
           vnnum="" 
         end
