@@ -117,7 +117,8 @@ form :title => 'Edicion Comprobante'  do |f|
                Client.all.order('ruc ASC').map{|u| ["#{u.ruc}-RUC-#{u.razon.capitalize}",
                u.id]}, :input_html => { :style =>  'width:50%'}
        f.input :ruc, :input_html => { :rows => 2,:style =>  'width:30%'} 
-       f.input :razon, :input_html => { :rows => 2,:style =>  'width:30%'}        
+       f.input :razon, :input_html => { :rows => 2,:style =>  'width:30%'}  
+       f.input :razon2, :input_html => { :rows => 2,:style =>  'width:30%'}              
        f.input :moneda, :label => 'Moneda', :as => :select, :collection =>
                Formula.where(product_id:8).map{|u| [u.descripcion, u.orden]}
        f.input :tc,:as =>:string, :input_html => { :rows => 2,:style =>  'width:30%'}
