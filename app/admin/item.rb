@@ -69,7 +69,9 @@ index :title => "Comprobante" do
 
   column("Codigo", :sortable => :sele) {|selen|  selen.sele }
   column("Fecha", :pfecha) do |item|
+    if item.pfecha
       item.pfecha.strftime("%d-%m-%Y")
+    end
   end    
   column("serie")
   column("Numero", :nfactu)
