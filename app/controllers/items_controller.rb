@@ -108,7 +108,7 @@ class ItemsController < ApplicationController
                                      empresa:Parameter.find_by_id(1).empresa)
 
     
-  Item.where(nuevo:1).each do |ittem| 
+  Item.where(nuevo:1).where('monto IS NOT NULL').each do |ittem| 
     Item.where(id:ittem.id).update_all(subtotal:ittem.monto/1.18,nuevo:0)
 
      object = Detail.new(:descripcion => ittem.detalle,

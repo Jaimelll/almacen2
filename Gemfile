@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '~> 2.5.1'
+ruby '~> 2.7.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails','>= 5.2'
 # Use sqlite3 as the database for Active Record
@@ -35,7 +35,7 @@ gem 'cancancan'
 
 gem 'wicked_pdf', '~> 1.1'
 #gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
-gem 'wkhtmltopdf-binary-edge', '~> 0.12.4.0'
+gem 'wkhtmltopdf-binary'
  #gem "wkhtmltopdf-heroku"
 
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
