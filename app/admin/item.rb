@@ -132,7 +132,9 @@ form :title => 'Edicion Comprobante'  do |f|
        
        f.input :empresa, :input_html => { :value => Parameter.find_by_id(1).empresa }, :as => :hidden
        f.input :user_id, :input_html => { :value => current_user.id }, :as => :hidden
-       f.input :subtotal, :input_html => { :value => 0}, :as => :hidden
+    
+       f.input :subtotal,:as =>:string, :input_html => { :style =>  'width:30%'}
+       f.input :monto,:as =>:string, :input_html => { :style =>  'width:30%'}
 
        f.input :serie2, :input_html => { :rows => 2,:style =>  'width:30%'}
        f.input :ndocu2, :input_html => { :rows => 2,:style =>  'width:30%'}
@@ -195,19 +197,8 @@ show :title => ' Comprobante'  do
             row :ruc
             row :razon
             row :razon2
-            row :subtotal do |item|
-                if  Detail.where(item_id:item.id).count>0 then
-                  Detail.where(item_id:item.id).where('monto>0 and cantidad>0').each do |detal|
-                    Detail.where(id:detal.id).update(precio:detal.monto/(detal.cantidad*1.18))
-                  end  
-                end  
-
-               item.update(subtotal:Detail.where(item_id:item.id).sum(:precio),
-                                monto:Detail.where(item_id:item.id).sum(:monto)  )
-                 
-             
-              item.subtotal
-            end
+            row :subtotal 
+            row :monto
            
             row :moneda do |item|
               Formula.where(product_id:8,orden:item.moneda).
@@ -259,10 +250,14 @@ show :title => ' Comprobante'  do
         suss=Item.where(origen:Parameter.find_by_id(1).origen,
               mmes:Parameter.find_by_id(1).mes,
               empresa:Parameter.find_by_id(1).empresa).sum(:subtotal)
+        smont=Item.where(origen:Parameter.find_by_id(1).origen,
+              mmes:Parameter.find_by_id(1).mes,
+              empresa:Parameter.find_by_id(1).empresa).sum(:monto)
+
               
         li  strong { "SUBTOTAL :"+ '%.2f' %(suss)} 
         li  strong { "IGV :"+ '%.2f' %(suss*0.18)} 
-        li  strong { "TOTAL :"+ '%.2f' %(suss*1.18)} 
+        li  strong { "TOTAL :"+ '%.2f' %(smont)} 
 
         li   link_to "Registros Excel",reports_vhoja1_path(format:  "xlsx", :param1=> 1)
         li
@@ -274,16 +269,18 @@ show :title => ' Comprobante'  do
        
        sidebar "Datos de Parte" , only: :show do
         monto=0
+        subtotal=0
  
         Item.where(id:params[:id]).each do |item|
           
           monto=monto+item.monto
+          subtotal=subtotal+item.subtotal
 
         end #each
             ul do
 
-              li   strong {'Subtotal='+'%.2f' %(monto/1.18).to_s}
-              li   strong {'IGV='+'%.2f' %(monto*0.18/1.18).to_s}
+              li   strong {'Subtotal='+'%.2f' %(subtotal).to_s}
+              li   strong {'IGV='+'%.2f' %(subtotal*0.18).to_s}
               li  strong {'TOTAL='+'%.2f' %(monto).to_s}
 
 
