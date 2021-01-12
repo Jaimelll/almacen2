@@ -37,9 +37,11 @@ permit_params :pfecha, :serie,:nfactu, :client_id,:subtotal,
               :origen, :mmes, :moneda, :tc, :user_id,
               :created_at, :updated_at, :empresa, :sele, :documento, :serie2, :ndocu2,
               :ruc, :razon, :razon2, :detalle,
+              :isc, :bolsas, :oconceptos,
               details_attributes: [:id, :descripcion, :cantidad, :precio, :monto, :item_id,
                 :user_id, :product_id, :_destroy]    
-                
+  
+
 # dar = ParametersController.new   
 # vtit=dar.modnomb
 
@@ -89,6 +91,9 @@ index :title => "Comprobante" do
 
   end
     column("tc")
+    column("isc")
+    column("bolsas")
+    column("oconceptos")
 
 
     actions
@@ -132,6 +137,11 @@ form :title => 'Edicion Comprobante'  do |f|
        f.input :serie2, :input_html => { :rows => 2,:style =>  'width:30%'}
        f.input :ndocu2, :input_html => { :rows => 2,:style =>  'width:30%'}
 
+       f.input :isc,:as =>:string, :input_html => { :style =>  'width:30%'}
+       f.input :bolsas,:as =>:string, :input_html => { :style =>  'width:30%'}
+       f.input :oconceptos,:as =>:string, :input_html => { :style =>  'width:30%'}
+       
+
     end
     f.inputs do
       
@@ -144,6 +154,8 @@ form :title => 'Edicion Comprobante'  do |f|
         a.input :descripcion, :input_html => { :rows => 2,:style =>  'width:30%'}
         a.input :cantidad,:as =>:string, :input_html => { :style =>  'width:30%'}
         a.input :monto,:as =>:string, :input_html => { :style =>  'width:30%'}
+
+
 
         a.input :user_id, :input_html => { :value => current_user.id }, :as => :hidden
 
@@ -204,6 +216,11 @@ show :title => ' Comprobante'  do
             row :tc
             row :serie2
             row :ndocu2
+            row :isc
+            row :bolsas
+            row :oconceptos
+
+        
           end
           panel "Tabla de Detalles" do
             table_for item.details do

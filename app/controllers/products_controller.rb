@@ -94,7 +94,7 @@ class ProductsController < ApplicationController
    def mimpote(vid)
     vmimpote='%.2f' % Item.find_by_id(vid).monto.to_s
     if Item.find_by_id(vid).client.id==1 
-      vmimpuesto=""
+      vmimpote=""
     end  
 
 
@@ -102,20 +102,25 @@ class ProductsController < ApplicationController
    end     
 #14  
    def moneda(vid)
-    if  Item.find_by_id(vid).tc==0
-      vmoneda=""
-    else  
+    case Item.find_by_id(vid).moneda
+    
+     when 2
       vmoneda="USD"
+     else
+      vmoneda=""
     end
    end
 #15
    def cambio(vid)
-    if  Item.find_by_id(vid).tc==0
-      vcambio=""
-    else  
-      vcambio='%.3f' % Item.find_by_id(vid).tc.to_s 
-    end
-    return vcambio
+    
+      vcambio=""     
+
+      if Item.find_by_id(vid).tc 
+        if  Item.find_by_id(vid).tc>0
+        vcambio='%.3f' % Item.find_by_id(vid).tc.to_s 
+        end
+      end
+      return vcambio 
    end   
    
 #16
@@ -189,7 +194,56 @@ class ProductsController < ApplicationController
         end
 
         return vnnum
-      end       
+      end   
+
+
+  #23   
+      def visc(vid)
+
+        visc=""
+
+        if Item.find_by_id(vid).isc 
+          if Item.find_by_id(vid).isc>0
+            visc='%.3f' % Item.find_by_id(vid).isc.to_s 
+          end
+        end
+        return visc    
+    
+       end     
+
+   #24  
+      def vbolsas(vid)
+        vbolsas=""
+
+        if Item.find_by_id(vid).bolsas 
+          if Item.find_by_id(vid).bolsas>0
+          vbolsas='%.3f' % Item.find_by_id(vid).bolsas.to_s 
+          end
+        end
+        return vbolsas   
+      end     
+
+   #25  
+      def voconceptos(vid)
+        voconceptos=""
+
+        if Item.find_by_id(vid).oconceptos
+            if Item.find_by_id(vid).oconceptos>0
+              voconceptos='%.3f' % Item.find_by_id(vid).oconceptos.to_s 
+            end
+        end
+        return voconceptos   
+         
+      end     
+
+
+
+
+
+
+
+
+
 
       def funcx(vid,nfunc)
         case nfunc
@@ -239,6 +293,12 @@ class ProductsController < ApplicationController
 
         when 22
           vval=nnum(vid)+"|"  
+        when 23
+          vval=visc(vid)+"|"  
+        when 24
+          vval=vbolsas(vid)+"|"  
+        when 25
+          vval=voconceptos(vid)+"|"  
 
 
          else 
