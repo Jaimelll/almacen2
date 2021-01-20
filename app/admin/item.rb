@@ -170,9 +170,9 @@ form :title => 'Edicion Comprobante'  do |f|
 
 show :title => ' Comprobante'  do
            
-          if Item.find_by_id(params[:id]).ruc then
-           compro.jalar( Item.find_by_id(params[:id]).ruc,params[:id])
-          end
+       #   if Item.find_by_id(params[:id]).ruc then
+       #    compro.jalar( Item.find_by_id(params[:id]).ruc,params[:id])
+       #   end
 
            attributes_table do
           
