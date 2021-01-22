@@ -35,7 +35,7 @@ gem 'cancancan'
 
 gem 'wicked_pdf', '~> 1.1'
 #gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
-gem 'wkhtmltopdf-binary'
+
  #gem "wkhtmltopdf-heroku"
 
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
@@ -64,11 +64,14 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'wkhtmltopdf-binary'
 end
 
-#group :production do
+group :production do
  # gem 'rails_12factor', '~> 0.0.3'
-#end
+  gem "wkhtmltopdf-heroku"
+
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
